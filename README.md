@@ -17,3 +17,10 @@ React Folder Structure Guide
 GitHub Repo Page
 
 - https://github.com/xylaron/project_bdo_react
+
+## Current Used Technologies
+
+- React.js
+- Tailwind CSS
+- Node.js
+- DaisyUI
