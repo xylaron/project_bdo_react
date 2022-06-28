@@ -24,7 +24,10 @@ import React from "react";
 
 function Square(props) {
   return (
-    <button className="square" onClick={props.onClick}>
+    <button
+      className="bg-zinc-800 text-white text-center font-bold text-[72px] mt-[-1px] mr-[-1px] w-[100px] h-[100px] border-[2px] border-solid border-white p-0 leading-10 float-left"
+      onClick={props.onClick}
+    >
       {props.value}
     </button>
   );
@@ -43,17 +46,17 @@ class Board extends React.Component {
   render() {
     return (
       <div>
-        <div className="board-row">
+        <div>
           {this.renderSquare(0)}
           {this.renderSquare(1)}
           {this.renderSquare(2)}
         </div>
-        <div className="board-row">
+        <div>
           {this.renderSquare(3)}
           {this.renderSquare(4)}
           {this.renderSquare(5)}
         </div>
-        <div className="board-row">
+        <div>
           {this.renderSquare(6)}
           {this.renderSquare(7)}
           {this.renderSquare(8)}
@@ -112,7 +115,12 @@ class Game extends React.Component {
       const desc = move ? "Go to move #" + move : "Go to Game Start";
       return (
         <li key={move}>
-          <button onClick={() => this.jumpTo(move)}>{desc}</button>
+          <button
+            className="btn btn-sm mx-auto mb-1 text-black bg-white hover:bg-zinc-200"
+            onClick={() => this.jumpTo(move)}
+          >
+            {desc}
+          </button>
         </li>
       );
     });
@@ -125,15 +133,17 @@ class Game extends React.Component {
     }
 
     return (
-      <div className="game">
-        <div className="game-board">
+      <div className="flex flex-row">
+        <div>
           <Board
             squares={current.squares}
             onClick={(i) => this.handleClick(i)}
           />
         </div>
-        <div className="game-info">
-          <div>{status}</div>
+        <div className="ml-[20px]">
+          <div className="text-white font-bold pb-5 mb-[10px] text-[25px] ">
+            {status}
+          </div>
           <ol>{moves}</ol>
         </div>
       </div>
@@ -161,8 +171,12 @@ function calculateWinner(squares) {
   return null;
 }
 
-function App() {
-  return <Game />;
+function TicTacToe() {
+  return (
+    <div className="p-10">
+      <Game />
+    </div>
+  );
 }
 
-export default App;
+export default TicTacToe;
