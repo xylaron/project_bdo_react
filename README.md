@@ -21,6 +21,7 @@ GitHub Repo Page
 ## Current Used Technologies
 
 - React.js
+- React Router
 - Tailwind CSS
 - Node.js
 - DaisyUI

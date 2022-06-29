@@ -1,13 +1,15 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import TicTacToe from "../TicTacToe";
-import GrindCalc from "../GrindCalc";
+import HomePage from "../Functions/HomePage";
+import TicTacToe from "../Functions/TicTacToe";
+import GrindCalc from "../Functions/GrindCalc";
 
 export default function AppRouter() {
   return (
     <Routes>
-      <Route path="/" element={<TicTacToe />} />
+      <Route path="/" element={<HomePage />} />
       <Route path="/grindcalc" element={<GrindCalc />} />
+      <Route path="/tictactoe" element={<TicTacToe />} />
     </Routes>
   );
 }
