@@ -53,7 +53,7 @@ export default function Main() {
               <td>Preset UI compoments that work with Tailwind CSS</td>
             </tr>
             <tr>
-              <th>4</th>
+              <th>5</th>
               <td>Node.js</td>
               <td>
                 All the installations of different frameworks and running the

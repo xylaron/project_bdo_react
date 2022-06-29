@@ -7,7 +7,7 @@ export default function Navbar() {
       <div className="flex-1">
         <NavLink
           to="/#"
-          className="btn btn-ghost normal-case text-xl text-white"
+          className="normal-case text-white text-[30px] font-bold mx-5"
         >
           Scuffed
         </NavLink>
