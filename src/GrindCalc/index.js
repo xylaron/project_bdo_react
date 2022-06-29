@@ -1,8 +1,8 @@
 import React from "react";
 import Main from "./Main";
 
-function TicTacToe() {
+function GrindCalc() {
   return <Main />;
 }
 
-export default TicTacToe;
+export default GrindCalc;
