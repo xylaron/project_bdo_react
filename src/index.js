@@ -7,7 +7,7 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <div className="bg-zinc-800 h-screen w-screen">
-      <div className="">
+      <div className="p-10">
         <TicTacToe />
       </div>
     </div>
