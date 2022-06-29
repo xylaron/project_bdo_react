@@ -1,8 +1,6 @@
 import React from "react";
 import Main from "./Main";
 
-function GrindCalc() {
+export default function GrindCalc() {
   return <Main />;
 }
-
-export default GrindCalc;

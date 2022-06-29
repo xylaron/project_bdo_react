@@ -1,6 +1,6 @@
 import React from "react";
 
-class Board extends React.Component {
+export default class Board extends React.Component {
   render() {
     let renderSquares = [];
     let rows = 3;
@@ -31,5 +31,3 @@ function Square(props) {
     </button>
   );
 }
-
-export default Board;

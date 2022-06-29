@@ -1,7 +1,5 @@
 import React from "react";
 
-function Main() {
+export default function Main() {
   return <div className="text-xl text-white font-bold">Hello World</div>;
 }
-
-export default Main;

@@ -1,7 +1,7 @@
 import React from "react";
 import Board from "./Board";
 
-class Main extends React.Component {
+export default class Main extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -107,5 +107,3 @@ function calculateWinner(squares) {
   }
   return null;
 }
-
-export default Main;
