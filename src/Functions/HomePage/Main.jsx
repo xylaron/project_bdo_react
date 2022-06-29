@@ -10,7 +10,7 @@ export default function Main() {
         This is a small side project of mine to learn web development.
       </div>
       <div className="text-white text-lg mb-10">
-        The main goal of this project is to laern all the different popular
+        The main goal of this project is to learn all the different popular
         frameworks that are commonly used.
       </div>
       <div className="text-white text-lg mb-10">
