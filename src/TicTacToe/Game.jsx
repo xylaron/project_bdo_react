@@ -62,7 +62,7 @@ class Game extends React.Component {
 
     let status;
     if (winner) {
-      status = "Winner: " + winner[0];
+      status = "Winner: " + winner;
     } else if (this.state.stepNumber === 9 && !winner) {
       status = "Draw";
     } else {
@@ -74,7 +74,6 @@ class Game extends React.Component {
         <div>
           <Board
             squares={current.squares}
-            winner={winner}
             onClick={(i) => this.handleClick(i)}
           />
         </div>
@@ -103,14 +102,10 @@ function calculateWinner(squares) {
   for (let i = 0; i < lines.length; i++) {
     const [a, b, c] = lines[i];
     if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
-      return squares;
+      return squares[a];
     }
   }
   return null;
 }
 
-function TicTacToe() {
-  return <Game />;
-}
-
-export default TicTacToe;
+export default Game;
