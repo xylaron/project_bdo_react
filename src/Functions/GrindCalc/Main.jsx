@@ -1,11 +1,11 @@
 import React from "react";
-import Table from "./Table";
+import GrindTable from "./GrindTable";
 
 export default function Main() {
   return (
     <div>
       <div>
-        <Table />
+        <GrindTable />
       </div>
     </div>
   );
