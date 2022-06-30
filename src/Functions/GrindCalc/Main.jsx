@@ -1,9 +1,12 @@
 import React from "react";
+import Table from "./Table";
 
 export default function Main() {
   return (
-    <div className="text-xl text-white font-bold">
-      This is the grind calculator.
+    <div>
+      <div>
+        <Table />
+      </div>
     </div>
   );
 }
