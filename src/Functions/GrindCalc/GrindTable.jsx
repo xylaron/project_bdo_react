@@ -14,8 +14,8 @@ export default class Table extends React.Component {
     item_icons.push(<th className="w-[72px] h-[30px] text-white">Silver/hr</th>);
 
     let test_output = [];
-    for (let i = 0; i < sycraia.length; i++) {
-      test_output.push(<td className="text-center font-bold text-white">Test</td>);
+    for (let i = 0; i < sycraia.length + 1; i++) {
+      test_output.push(<td className="text-center font-bold text-white">12,345</td>);
     }
 
     return (
