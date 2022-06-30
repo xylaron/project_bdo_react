@@ -50,7 +50,7 @@ export default class Main extends React.Component {
       const desc = move ? "Go to move #" + move : "Go to Game Start";
       return (
         <li key={move}>
-          <button className="btn btn-sm mx-auto mb-1 text-black bg-white hover:bg-zinc-200" onClick={() => this.jumpTo(move)}>
+          <button className="btn btn-sm mx-auto mb-1 text-black font-bold bg-white hover:bg-zinc-200 border-none" onClick={() => this.jumpTo(move)}>
             {desc}
           </button>
         </li>
@@ -67,7 +67,7 @@ export default class Main extends React.Component {
     }
 
     return (
-      <div className="flex flex-row bg-zinc-800 p-8 rounded-lg h-[495px] ">
+      <div className="flex flex-row bg-zinc-800 p-8 rounded-lg h-[495px]">
         <div>
           <Board squares={current.squares} onClick={(i) => this.handleClick(i)} />
         </div>
