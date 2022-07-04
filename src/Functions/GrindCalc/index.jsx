@@ -1,15 +1,15 @@
 import React from "react";
-import GrindInputMenu from "./GrindInputMenu";
-import GrindTable from "./GrindTable";
+import GrindInput from "./GrindInput";
+import GrindOutput from "./GrindOutput";
 
 export default function GrindCalc() {
   return (
     <div>
       <div>
-        <GrindInputMenu />
+        <GrindInput />
       </div>
       <div className="pt-5">
-        <GrindTable />
+        <GrindOutput />
       </div>
     </div>
   );

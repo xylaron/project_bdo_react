@@ -1,5 +1,5 @@
 import React from "react";
-import { sycraia } from "../../database";
+import { sycraia } from "../../../database";
 
 export default class Table extends React.Component {
   render() {
