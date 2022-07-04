@@ -18,7 +18,7 @@ export default class Table extends React.Component {
     for (let j = 0; j < testData.length; j++) {
       let single_output = [];
       for (let i = 0; i < sycraia.length; i++) {
-        if (i % 2 === 0) single_output.push(<td className="text-center font-bold bg-zinc-700/25 text-white p-2">{testData[j][i]}</td>);
+        if (j % 2 === 0) single_output.push(<td className="text-center font-bold bg-zinc-700/25 text-white p-2">{testData[j][i]}</td>);
         else single_output.push(<td className="text-center font-bold bg-zinc-700/50 text-white p-2">{testData[j][i]}</td>);
       }
       single_output.push(<td className="text-center font-bold text-white p-2">{Math.round(calcSilverPerHr(j)).toLocaleString()}</td>);
