@@ -5,9 +5,7 @@ export default class GrindCalc extends React.Component {
   render() {
     return (
       <div>
-        <div className="">
-          <GrindOutput />
-        </div>
+        <GrindOutput />
       </div>
     );
   }
