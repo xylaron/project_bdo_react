@@ -27,7 +27,7 @@ export default function GrindInputMenu() {
             <div className="fixed inset-0 bg-black bg-opacity-80" />
           </Transition.Child>
 
-          <div className="fixed inset-0 overflow-y-auto">
+          <div className="fixed inset-0 overflow-y-auto z-20">
             <div className="flex items-center justify-center p-10 text-center">
               <Transition.Child as={Fragment} enter="ease-out duration-300" enterFrom="opacity-0 scale-95" enterTo="opacity-100 scale-100" leave="ease-in duration-200" leaveFrom="opacity-100 scale-100" leaveTo="opacity-0 scale-95">
                 <Dialog.Panel className="min-w-full min-h-full rounded-lg bg-zinc-900 p-5 text-left align-middle shadow-xl transition-all">

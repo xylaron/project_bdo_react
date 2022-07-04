@@ -1,8 +1,8 @@
 import React from "react";
-import GrindTable from "./GrindTable";
 import GrindInputMenu from "./GrindInputMenu";
+import GrindTable from "./GrindTable";
 
-export default function Main() {
+export default function GrindCalc() {
   return (
     <div>
       <div>

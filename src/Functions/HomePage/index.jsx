@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Main() {
+export default function HomePage() {
   return (
     <div className="bg-zinc-800 p-5 rounded-lg min-h-screen">
       <div className="text-xl text-white font-bold mb-10">Welcome to Project Scuffed.</div>

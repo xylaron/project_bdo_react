@@ -1,7 +1,7 @@
 import React from "react";
 import Board from "./Board";
 
-export default class Main extends React.Component {
+export default class TicTacToe extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
