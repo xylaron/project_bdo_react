@@ -25,3 +25,5 @@ GitHub Repo Page
 - Tailwind CSS
 - Node.js
 - DaisyUI
+- Headless UI
+- Hero Icons

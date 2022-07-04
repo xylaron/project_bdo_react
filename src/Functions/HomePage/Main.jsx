@@ -41,6 +41,16 @@ export default function Main() {
               <td>Node.js</td>
               <td>All the installations of different frameworks and running the development server</td>
             </tr>
+            <tr>
+              <th>6</th>
+              <td>Headless UI</td>
+              <td>React UI components that can be styled with Tailwind CSS</td>
+            </tr>
+            <tr>
+              <th>7</th>
+              <td>Hero Icons</td>
+              <td>React Icon SVGs that can be directly imported into the project</td>
+            </tr>
           </tbody>
         </table>
       </div>
