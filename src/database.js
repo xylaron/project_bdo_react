@@ -1,6 +1,5 @@
 export const tax = 0.85475; //Marketplace Tax Value for player
 
-//prettier-ignore
 export const sycraia = [
   { icon: require("./Assets/item_icons/44380.png"), price: 18000 },
   { icon: require("./Assets/item_icons/44381.png"), price: 10000 },

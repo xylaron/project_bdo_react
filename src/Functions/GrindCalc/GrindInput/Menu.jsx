@@ -1,6 +1,7 @@
 import { Dialog, Transition } from "@headlessui/react";
 import { Fragment, useState } from "react";
 import { XIcon } from "@heroicons/react/solid";
+import { sycraia } from "../../../database";
 
 export default function Menu() {
   let [isOpen, setIsOpen] = useState(false);
@@ -15,14 +16,24 @@ export default function Menu() {
     console.log("modal opened");
   }
 
+  let item_icons = [];
+  for (let i = 0; i < sycraia.length; i++) {
+    item_icons.push(
+      <th className="w-[72px] h-[30px] p-2">
+        <img className="mx-auto" src={sycraia[i].icon} alt="icon" />
+      </th>
+    );
+  }
+
   return (
     <>
       <div>
-        <button type="button" onClick={openModal} className="btn btn-sm rounded-md bg-white bg-opacity-100 text-sm text-black font-bold border-none hover:bg-white hover:bg-opacity-80">
-          Open dialog
-        </button>
+        <div>
+          <button type="button" onClick={openModal} className="btn btn-md rounded-xl bg-green-600 bg-opacity-100 text-xl text-white font-bold border-none hover:bg-green-600 hover:bg-opacity-80">
+            Add
+          </button>
+        </div>
       </div>
-
       <Transition appear show={isOpen} as={Fragment}>
         <Dialog as="div" className="relative z-20" onClose={closeModal}>
           <Transition.Child as={Fragment} enter="ease-out duration-300" enterFrom="opacity-0" enterTo="opacity-100" leave="ease-in duration-200" leaveFrom="opacity-100" leaveTo="opacity-0">
@@ -32,24 +43,9 @@ export default function Menu() {
           <div className="fixed inset-0 overflow-y-auto">
             <div className="flex items-center justify-center p-10 text-center">
               <Transition.Child as={Fragment} enter="ease-out duration-300" enterFrom="opacity-0 scale-95" enterTo="opacity-100 scale-100" leave="ease-in duration-200" leaveFrom="opacity-100 scale-100" leaveTo="opacity-0 scale-95">
-                <Dialog.Panel className="min-w-full min-h-full rounded-lg bg-zinc-900 p-5 text-left align-middle shadow-xl transition-all">
+                <Dialog.Panel className="min-w-full min-h-full rounded-xl bg-zinc-900 p-5 text-left align-middle shadow-xl transition-all">
                   <div className="bg-zinc-800 rounded-lg p-3">
-                    <table>Hello</table>
-                  </div>
-                  <div className="mt-3 bg-zinc-800 rounded-lg p-3">
-                    <p className="text-sm text-zinc-400">Open sesame!</p>
-                    <p className="text-sm text-zinc-400">Open sesame!</p>
-                    <p className="text-sm text-zinc-400">Open sesame!</p>
-                    <p className="text-sm text-zinc-400">Open sesame!</p>
-                    <p className="text-sm text-zinc-400">Open sesame!</p>
-                    <p className="text-sm text-zinc-400">Open sesame!</p>
-                    <p className="text-sm text-zinc-400">Open sesame!</p>
-                    <p className="text-sm text-zinc-400">Open sesame!</p>
-                    <p className="text-sm text-zinc-400">Open sesame!</p>
-                    <p className="text-sm text-zinc-400">Open sesame!</p>
-                    <p className="text-sm text-zinc-400">Open sesame!</p>
-                    <p className="text-sm text-zinc-400">Open sesame!</p>
-                    <p className="text-sm text-zinc-400">Open sesame!</p>
+                    <table>{item_icons}</table>
                   </div>
                 </Dialog.Panel>
               </Transition.Child>

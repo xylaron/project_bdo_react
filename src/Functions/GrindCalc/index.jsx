@@ -1,16 +1,14 @@
 import React from "react";
-import GrindInput from "./GrindInput";
 import GrindOutput from "./GrindOutput";
 
-export default function GrindCalc() {
-  return (
-    <div>
+export default class GrindCalc extends React.Component {
+  render() {
+    return (
       <div>
-        <GrindInput />
+        <div className="">
+          <GrindOutput />
+        </div>
       </div>
-      <div className="pt-5">
-        <GrindOutput />
-      </div>
-    </div>
-  );
+    );
+  }
 }
