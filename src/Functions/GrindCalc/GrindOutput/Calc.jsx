@@ -20,9 +20,7 @@ export function calcTotalSilverPerHr() {
   return totalSilverPerHr;
 }
 
-export function calcAvgSilverPerHr() {
-  return calcTotalSilverPerHr() / testData.length;
-}
+export const calcAvgSilverPerHr = () => calcTotalSilverPerHr() / testData.length;
 
 export default function Calc() {
   return (

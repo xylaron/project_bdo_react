@@ -1,7 +1,7 @@
 import React from "react";
 import { sycraia } from "../../../database";
 
-export default function UserInput({ closeModal }) {
+export default function UserInput({ toggleModal }) {
   let item_icons = [];
   let input_boxes = [];
   for (let i = 0; i < sycraia.length; i++) {
@@ -32,7 +32,7 @@ export default function UserInput({ closeModal }) {
         </table>
       </div>
       <div className="mt-5">
-        <button type="button" onClick={closeModal} className="btn btn-md rounded-xl bg-green-600 bg-opacity-100 text-xl text-white font-bold border-none hover:bg-green-600 hover:bg-opacity-80">
+        <button type="button" onClick={toggleModal} className="btn btn-md rounded-xl bg-green-600 bg-opacity-100 text-xl text-white font-bold border-none hover:bg-green-600 hover:bg-opacity-80">
           Add
         </button>
       </div>
