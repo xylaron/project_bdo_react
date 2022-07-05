@@ -1,7 +1,7 @@
 import { Dialog, Transition } from "@headlessui/react";
 import { Fragment, useState } from "react";
 import { XIcon } from "@heroicons/react/solid";
-import { sycraia } from "../../../database";
+import UserInput from "./UserInput";
 
 export default function Menu() {
   let [isOpen, setIsOpen] = useState(false);
@@ -14,15 +14,6 @@ export default function Menu() {
   function openModal() {
     setIsOpen(true);
     console.log("modal opened");
-  }
-
-  let item_icons = [];
-  for (let i = 0; i < sycraia.length; i++) {
-    item_icons.push(
-      <th className="w-[72px] h-[30px] p-2">
-        <img className="mx-auto" src={sycraia[i].icon} alt="icon" />
-      </th>
-    );
   }
 
   return (
@@ -44,9 +35,7 @@ export default function Menu() {
             <div className="flex items-center justify-center p-10 text-center">
               <Transition.Child as={Fragment} enter="ease-out duration-300" enterFrom="opacity-0 scale-95" enterTo="opacity-100 scale-100" leave="ease-in duration-200" leaveFrom="opacity-100 scale-100" leaveTo="opacity-0 scale-95">
                 <Dialog.Panel className="min-w-full min-h-full rounded-xl bg-zinc-900 p-5 text-left align-middle shadow-xl transition-all">
-                  <div className="bg-zinc-800 rounded-lg p-3">
-                    <table>{item_icons}</table>
-                  </div>
+                  <UserInput closeModal={closeModal} />
                 </Dialog.Panel>
               </Transition.Child>
               <Transition.Child as={Fragment} enter="ease-out duration-300" enterFrom="opacity-0 scale-95" enterTo="opacity-100 scale-100" leave="ease-in duration-200" leaveFrom="opacity-100 scale-100" leaveTo="opacity-0 scale-95">
