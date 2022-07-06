@@ -27,11 +27,15 @@ export default function Calc() {
     <div className="grid grid-cols-5 gap-5">
       <div className="col-span-2 bg-zinc-800 rounded-xl p-5">
         <div className="text-white text-3xl font-bold">Total Silver Made</div>
-        <div className="text-white pt-3 text-5xl font-bold">{Math.round(calcTotalSilverPerHr()).toLocaleString()}</div>
+        <div className="text-white pt-3 text-5xl font-bold">
+          {Math.round(calcTotalSilverPerHr()).toLocaleString()}
+        </div>
       </div>
       <div className="col-span-2 bg-zinc-800 rounded-xl p-5">
         <div className="text-white text-3xl font-bold">Average Silver Per Hour</div>
-        <div className="text-white pt-3 text-5xl font-bold">{Math.round(calcAvgSilverPerHr()).toLocaleString()}</div>
+        <div className="text-white pt-3 text-5xl font-bold">
+          {Math.round(calcAvgSilverPerHr()).toLocaleString()}
+        </div>
       </div>
       <div>
         <GrindInput />

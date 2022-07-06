@@ -50,7 +50,10 @@ export default class TicTacToe extends React.Component {
       const desc = move ? "Go to move #" + move : "Go to Game Start";
       return (
         <li key={move}>
-          <button className="btn btn-sm mx-auto mb-1 text-black font-bold bg-white bg-opacity-100 hover:bg-white hover:bg-opacity-80 border-none" onClick={() => this.jumpTo(move)}>
+          <button
+            className="btn btn-sm mx-auto mb-1 text-black font-bold bg-white bg-opacity-100 hover:bg-white hover:bg-opacity-80 border-none"
+            onClick={() => this.jumpTo(move)}
+          >
             {desc}
           </button>
         </li>

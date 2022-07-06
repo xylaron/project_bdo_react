@@ -1,6 +1,8 @@
 import React from "react";
 import { sycraia } from "../../../database";
 
+export let data_buffer = [];
+
 export default function UserInput({ toggleModal }) {
   let item_icons = [];
   let input_boxes = [];
@@ -14,12 +16,20 @@ export default function UserInput({ toggleModal }) {
     i % 2 === 0
       ? input_boxes.push(
           <td>
-            <input type="text" className="input rounded-lg border-none w-[80px] px-2 text-center text-white font-bold text-lg bg-zinc-900/75"></input>
+            <input
+              type="number"
+              className="input rounded-lg border-zinc-700 w-20 px-2 py-1 text-center text-white font-bold text-lg bg-zinc-900/75"
+              placeholder="0"
+            />
           </td>
         )
       : input_boxes.push(
           <td>
-            <input type="text" className="input rounded-lg border-none w-[80px] px-2 text-center text-white font-bold text-lg bg-zinc-900"></input>
+            <input
+              type="number"
+              className="input rounded-lg border-zinc-700 w-20 px-2 py-1 text-center text-white font-bold text-lg bg-zinc-900"
+              placeholder="0"
+            />
           </td>
         );
   }
@@ -32,7 +42,11 @@ export default function UserInput({ toggleModal }) {
         </table>
       </div>
       <div className="mt-5">
-        <button type="button" onClick={toggleModal} className="btn btn-md rounded-xl bg-green-600 bg-opacity-100 text-xl text-white font-bold border-none hover:bg-green-600 hover:bg-opacity-80">
+        <button
+          type="button"
+          onClick={toggleModal}
+          className="btn btn-md rounded-xl bg-green-600 bg-opacity-100 text-xl text-white font-bold border-none hover:bg-green-600 hover:bg-opacity-80"
+        >
           Add
         </button>
       </div>
