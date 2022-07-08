@@ -1,3 +1,5 @@
+import Table from "./Functions/GrindCalc/GrindOutput/Table";
+
 export const tax = 0.85475; //Marketplace Tax Value for player
 
 //prettier-ignore
@@ -42,3 +44,23 @@ export let testData = [
   [r(7500, 8500), r(150, 300), r(50, 55), r(50, 55), r(15, 25), r(5, 10), r(0, 3), r(0, 6), r(5, 15), r(0, 2), r(30, 60), r(40, 80), r(40, 80)],
   [r(7500, 8500), r(150, 300), r(50, 55), r(50, 55), r(15, 25), r(5, 10), r(0, 3), r(0, 6), r(5, 15), r(0, 2), r(30, 60), r(40, 80), r(40, 80)],
 ];
+
+export const turnStringArrayIntoIntArray = (stringArray) => {
+  let intArray = [];
+  for (let i = 0; i < stringArray.length; i++) {
+    intArray[i] = Number.parseInt(stringArray[i], 10);
+  }
+  return intArray;
+};
+
+export const addData = (array) => {
+  for (let i = 0; i < sycraia.length; i++) {
+    if (array[i] === undefined) {
+      array[i] = "0";
+      console.log("empty slot");
+    }
+  }
+  testData.push(turnStringArrayIntoIntArray(array));
+  console.log(testData);
+  Table();
+};

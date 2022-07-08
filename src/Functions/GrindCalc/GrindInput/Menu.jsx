@@ -1,7 +1,7 @@
 import { Dialog, Transition } from "@headlessui/react";
 import { Fragment, useState } from "react";
 import { XIcon } from "@heroicons/react/solid";
-import UserInput from "./UserInput";
+import UserInput, { resetBuffer } from "./UserInput";
 
 export default function Menu() {
   let [isOpen, setIsOpen] = useState(false);
@@ -64,7 +64,10 @@ export default function Menu() {
                   <button
                     type="button"
                     className="btn btn-sm p-0 border-none hover:opacity-80"
-                    onClick={toggleModal}
+                    onClick={() => {
+                      resetBuffer();
+                      toggleModal();
+                    }}
                   >
                     <XIcon className="text-white w-6 h-6" />
                   </button>

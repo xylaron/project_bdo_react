@@ -4,6 +4,7 @@ import { calcSilverPerHr } from "./Calc";
 
 export default function Table() {
   let item_icons = [];
+
   for (let i = 0; i < sycraia.length; i++) {
     item_icons.push(
       <th className="w-[80px] h-[30px] p-2">
@@ -39,7 +40,7 @@ export default function Table() {
 
   return (
     <div>
-      <div className="">
+      <div>
         <table className="relative bg-zinc-800 rounded-xl overflow-hidden">
           <thead className="">{item_icons}</thead>
           <tbody className="">{total_output}</tbody>
