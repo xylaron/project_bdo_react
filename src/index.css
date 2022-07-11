@@ -9,3 +9,12 @@
     margin: 0;
   }
 }
+
+.divbox {
+  @apply bg-zinc-800 rounded-xl p-5;
+}
+
+div,
+table {
+  @apply text-white;
+}

@@ -1,12 +1,26 @@
 /* eslint-disable no-loop-func */
-import React from "react";
-import { addData, sycraia } from "../../../database";
-
-export let data_buffer = [];
-
-export const resetBuffer = () => (data_buffer = []);
+import React, { useState } from "react";
+import { sycraia } from "../../../database";
 
 export default function UserInput({ toggleModal }) {
+  let obj = {};
+  for (let i = 0; i < sycraia.length; i++) {
+    obj["item" + [i]] = "0";
+  }
+
+  const [itemInput, setItemInput] = useState(obj);
+
+  const handleChange = (event) => {
+    const name = event.target.name;
+    const value = event.target.value;
+    setItemInput((values) => ({ ...values, [name]: value }));
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log(itemInput);
+  };
+
   let item_icons = [];
   let input_boxes = [];
 
@@ -22,9 +36,10 @@ export default function UserInput({ toggleModal }) {
           <td>
             <input
               type="number"
+              name={"item" + [i]}
               className="input rounded-lg border-zinc-700 w-20 px-2 py-1 text-center text-white font-bold text-lg bg-zinc-900/75"
               placeholder="0"
-              onChange={(event) => (data_buffer[i] = event.target.value)}
+              onChange={handleChange}
             />
           </td>
         )
@@ -32,34 +47,35 @@ export default function UserInput({ toggleModal }) {
           <td>
             <input
               type="number"
+              name={"item" + [i]}
               className="input rounded-lg border-zinc-700 w-20 px-2 py-1 text-center text-white font-bold text-lg bg-zinc-900"
               placeholder="0"
-              onChange={(event) => (data_buffer[i] = event.target.value)}
+              onChange={handleChange}
             />
           </td>
         );
   }
   return (
     <div>
-      <div className="bg-zinc-800 rounded-xl p-3">
-        <table className="mx-auto">
-          <thead>{item_icons}</thead>
-          <tbody>{input_boxes}</tbody>
-        </table>
-      </div>
-      <div className="mt-5">
-        <button
-          type="button"
-          onClick={() => {
-            toggleModal();
-            addData(data_buffer);
-            resetBuffer();
-          }}
-          className="btn btn-md rounded-xl bg-green-600 bg-opacity-100 text-xl text-white font-bold border-none hover:bg-green-600 hover:bg-opacity-80"
-        >
-          Add
-        </button>
-      </div>
+      <form onSubmit={handleSubmit}>
+        <div className="bg-zinc-800 rounded-xl p-3">
+          <table className="mx-auto">
+            <thead>{item_icons}</thead>
+            <tbody>{input_boxes}</tbody>
+          </table>
+        </div>
+        <div className="mt-5">
+          <button
+            type="submit"
+            onClick={() => {
+              toggleModal();
+            }}
+            className="btn btn-md rounded-xl bg-green-600 bg-opacity-100 text-xl text-white font-bold border-none hover:bg-green-600 hover:bg-opacity-80"
+          >
+            Add
+          </button>
+        </div>
+      </form>
     </div>
   );
 }
