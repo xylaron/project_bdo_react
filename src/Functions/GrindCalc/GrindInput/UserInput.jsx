@@ -1,11 +1,12 @@
 /* eslint-disable no-loop-func */
 import React, { useState } from "react";
+import AddButton from "../../../Components/AddButton";
 import { sycraia } from "../../../database";
 
 export default function UserInput({ toggleModal }) {
   let obj = {};
   for (let i = 0; i < sycraia.length; i++) {
-    obj["item" + [i]] = "0";
+    obj[`item${i}`] = "0";
   }
 
   const [itemInput, setItemInput] = useState(obj);
@@ -18,6 +19,7 @@ export default function UserInput({ toggleModal }) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    // console.log(Object.values(itemInput));
     console.log(itemInput);
   };
 
@@ -36,8 +38,8 @@ export default function UserInput({ toggleModal }) {
           <td>
             <input
               type="number"
-              name={"item" + [i]}
-              className="input rounded-lg border-zinc-700 w-20 px-2 py-1 text-center text-white font-bold text-lg bg-zinc-900/75"
+              name={`item${i}`}
+              className="input rounded-lg border-zinc-700 w-20 px-2 py-1 text-center font-bold text-lg bg-zinc-900/75"
               placeholder="0"
               onChange={handleChange}
             />
@@ -47,8 +49,8 @@ export default function UserInput({ toggleModal }) {
           <td>
             <input
               type="number"
-              name={"item" + [i]}
-              className="input rounded-lg border-zinc-700 w-20 px-2 py-1 text-center text-white font-bold text-lg bg-zinc-900"
+              name={`item${i}`}
+              className="input rounded-lg border-zinc-700 w-20 px-2 py-1 text-center font-bold text-lg bg-zinc-900"
               placeholder="0"
               onChange={handleChange}
             />
@@ -65,15 +67,7 @@ export default function UserInput({ toggleModal }) {
           </table>
         </div>
         <div className="mt-5">
-          <button
-            type="submit"
-            onClick={() => {
-              toggleModal();
-            }}
-            className="btn btn-md rounded-xl bg-green-600 bg-opacity-100 text-xl text-white font-bold border-none hover:bg-green-600 hover:bg-opacity-80"
-          >
-            Add
-          </button>
+          <AddButton type="submit" onClick={toggleModal} />
         </div>
       </form>
     </div>

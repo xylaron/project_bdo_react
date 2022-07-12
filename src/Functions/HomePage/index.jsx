@@ -24,9 +24,11 @@ export default function HomePage() {
           </div>
           <table className="table table-compact min-w-screen">
             <thead>
-              <th></th>
-              <td>Name</td>
-              <td>My Understanding so far</td>
+              <tr>
+                <th></th>
+                <td>Name</td>
+                <td>My Understanding so far</td>
+              </tr>
             </thead>
             <tbody>
               <tr>

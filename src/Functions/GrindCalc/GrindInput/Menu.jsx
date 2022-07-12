@@ -2,6 +2,7 @@ import { Dialog, Transition } from "@headlessui/react";
 import { Fragment, useState } from "react";
 import { XIcon } from "@heroicons/react/solid";
 import UserInput from "./UserInput";
+import AddButton from "../../../Components/AddButton";
 
 export default function Menu() {
   let [isOpen, setIsOpen] = useState(false);
@@ -13,15 +14,7 @@ export default function Menu() {
   return (
     <>
       <div>
-        <div>
-          <button
-            type="button"
-            onClick={toggleModal}
-            className="btn btn-md rounded-xl bg-green-600 bg-opacity-100 text-xl text-white font-bold border-none hover:bg-green-600 hover:bg-opacity-80"
-          >
-            Add
-          </button>
-        </div>
+        <AddButton type="button" onClick={toggleModal} />
       </div>
       <Transition appear show={isOpen} as={Fragment}>
         <Dialog as="div" className="relative z-20" onClose={() => setIsOpen(true)}>
@@ -68,7 +61,7 @@ export default function Menu() {
                       toggleModal();
                     }}
                   >
-                    <XIcon className="text-white w-6 h-6" />
+                    <XIcon className="w-6 h-6" />
                   </button>
                 </div>
               </Transition.Child>
