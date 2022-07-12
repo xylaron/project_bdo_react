@@ -1,5 +1,8 @@
 # Self Notes
 
+- Change some components to reusuable components
+- Setup the GrindCalc so it can pass data smoothly between components
+
 ## Useful Links
 
 React Official Documentation
