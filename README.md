@@ -1,7 +1,8 @@
 # Self Notes
 
-- Fix Calculator so that it can load/update the grind data properly
-- Find the proper relation between Table and Calc component for optimal code
+- Fix errors that pop up in console(if even fixable)
+- Add Switch Between Sycraia and Orccamp
+- Add Edit/Delete function in Grind Calculator
 
 ## Useful Links
 
