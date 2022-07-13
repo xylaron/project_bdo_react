@@ -1,4 +1,4 @@
-import Table from "./Functions/GrindCalc/GrindOutput/Table";
+import func from "./Components/Common";
 
 export const tax = 0.85475; //Marketplace Tax Value for player
 
@@ -33,34 +33,12 @@ export const orccamp = [
   { icon: require("./Assets/item_icons/752023.png"), price: 50000 },
 ];
 
-const r = (min, max) => Math.floor(Math.random() * (max - min + 1) + min);
-
 //prettier-ignore
 export let testData = [
-  [r(7500, 8500), r(150, 300), r(50, 55), r(50, 55), r(15, 25), r(5, 10), r(0, 3), r(0, 6), r(5, 15), r(0, 2), r(30, 60), r(40, 80), r(40, 80)],
-  [r(7500, 8500), r(150, 300), r(50, 55), r(50, 55), r(15, 25), r(5, 10), r(0, 3), r(0, 6), r(5, 15), r(0, 2), r(30, 60), r(40, 80), r(40, 80)],
-  [r(7500, 8500), r(150, 300), r(50, 55), r(50, 55), r(15, 25), r(5, 10), r(0, 3), r(0, 6), r(5, 15), r(0, 2), r(30, 60), r(40, 80), r(40, 80)],
-  [r(7500, 8500), r(150, 300), r(50, 55), r(50, 55), r(15, 25), r(5, 10), r(0, 3), r(0, 6), r(5, 15), r(0, 2), r(30, 60), r(40, 80), r(40, 80)],
-  [r(7500, 8500), r(150, 300), r(50, 55), r(50, 55), r(15, 25), r(5, 10), r(0, 3), r(0, 6), r(5, 15), r(0, 2), r(30, 60), r(40, 80), r(40, 80)],
-  [r(7500, 8500), r(150, 300), r(50, 55), r(50, 55), r(15, 25), r(5, 10), r(0, 3), r(0, 6), r(5, 15), r(0, 2), r(30, 60), r(40, 80), r(40, 80)],
+  [func.randomNum(7500, 8500), func.randomNum(150, 300), func.randomNum(50, 55), func.randomNum(50, 55), func.randomNum(15, 25), func.randomNum(5, 10), func.randomNum(0, 3), func.randomNum(0, 6), func.randomNum(5, 15), func.randomNum(0, 2), func.randomNum(30, 60), func.randomNum(40, 80), func.randomNum(40, 80)],
+  [func.randomNum(7500, 8500), func.randomNum(150, 300), func.randomNum(50, 55), func.randomNum(50, 55), func.randomNum(15, 25), func.randomNum(5, 10), func.randomNum(0, 3), func.randomNum(0, 6), func.randomNum(5, 15), func.randomNum(0, 2), func.randomNum(30, 60), func.randomNum(40, 80), func.randomNum(40, 80)],
+  [func.randomNum(7500, 8500), func.randomNum(150, 300), func.randomNum(50, 55), func.randomNum(50, 55), func.randomNum(15, 25), func.randomNum(5, 10), func.randomNum(0, 3), func.randomNum(0, 6), func.randomNum(5, 15), func.randomNum(0, 2), func.randomNum(30, 60), func.randomNum(40, 80), func.randomNum(40, 80)],
+  [func.randomNum(7500, 8500), func.randomNum(150, 300), func.randomNum(50, 55), func.randomNum(50, 55), func.randomNum(15, 25), func.randomNum(5, 10), func.randomNum(0, 3), func.randomNum(0, 6), func.randomNum(5, 15), func.randomNum(0, 2), func.randomNum(30, 60), func.randomNum(40, 80), func.randomNum(40, 80)],
+  [func.randomNum(7500, 8500), func.randomNum(150, 300), func.randomNum(50, 55), func.randomNum(50, 55), func.randomNum(15, 25), func.randomNum(5, 10), func.randomNum(0, 3), func.randomNum(0, 6), func.randomNum(5, 15), func.randomNum(0, 2), func.randomNum(30, 60), func.randomNum(40, 80), func.randomNum(40, 80)],
+  [func.randomNum(7500, 8500), func.randomNum(150, 300), func.randomNum(50, 55), func.randomNum(50, 55), func.randomNum(15, 25), func.randomNum(5, 10), func.randomNum(0, 3), func.randomNum(0, 6), func.randomNum(5, 15), func.randomNum(0, 2), func.randomNum(30, 60), func.randomNum(40, 80), func.randomNum(40, 80)],
 ];
-
-export const turnStringArrayIntoIntArray = (stringArray) => {
-  let intArray = [];
-  for (let i = 0; i < stringArray.length; i++) {
-    intArray[i] = Number.parseInt(stringArray[i], 10);
-  }
-  return intArray;
-};
-
-export const addData = (array) => {
-  for (let i = 0; i < sycraia.length; i++) {
-    if (array[i] === undefined) {
-      array[i] = "0";
-      console.log("empty slot");
-    }
-  }
-  testData.push(turnStringArrayIntoIntArray(array));
-  console.log(testData);
-  Table();
-};

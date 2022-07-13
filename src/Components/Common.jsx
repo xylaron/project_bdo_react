@@ -1,4 +1,4 @@
-export const common = {
+const func = {
   //takes int and formats the int with "b", "m", "k"
   formatNumber: (int) => {
     let count = 0;
@@ -19,4 +19,8 @@ export const common = {
       return int.toString();
     }
   },
+
+  randomNum: (min, max) => Math.floor(Math.random() * (max - min + 1) + min),
 };
+
+export default func;

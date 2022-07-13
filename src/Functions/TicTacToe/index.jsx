@@ -51,7 +51,7 @@ export default class TicTacToe extends React.Component {
       return (
         <li key={move}>
           <button
-            className="btn btn-sm mx-auto mb-1 text-black font-bold bg-white bg-opacity-100 hover:bg-white hover:bg-opacity-80 border-none"
+            className="btn btn-sm mx-auto mb-1 text-black font-bold bg-white bg-opacity-100 hover:bg-white hover:bg-opacity-60 border-none"
             onClick={() => this.jumpTo(move)}
           >
             {desc}

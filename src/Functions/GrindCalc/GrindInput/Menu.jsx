@@ -9,6 +9,7 @@ export default function Menu({ update }) {
 
   function toggleModal() {
     isOpen ? setIsOpen(false) : setIsOpen(true);
+    console.log(isOpen ? "grind input window close" : "grind input window open");
   }
   return (
     <>
@@ -55,7 +56,7 @@ export default function Menu({ update }) {
                 <div className="absolute top-0 right-0 p-3">
                   <button
                     type="button"
-                    className="btn btn-sm p-0 border-none hover:opacity-80"
+                    className="btn btn-sm p-0 border-none hover:opacity-60"
                     onClick={() => {
                       toggleModal();
                     }}

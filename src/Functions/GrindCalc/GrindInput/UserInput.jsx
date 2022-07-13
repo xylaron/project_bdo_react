@@ -26,20 +26,20 @@ export default function UserInput({ toggleModal, update }) {
     const itemInputConv = Object.values(itemInput).map((str) => {
       return Number(str);
     });
-    console.log(itemInputConv);
+    console.log("current input data: ", itemInputConv);
     update(itemInputConv);
   };
 
   for (let i = 0; i < sycraia.length; i++) {
     item_icons.push(
-      <th className="w-[80px] h-[30px] p-2">
+      <th key={"itemicon" + i} className="w-[80px] h-[30px] p-2">
         <img className="mx-auto" src={sycraia[i].icon} alt="icon" />
       </th>
     );
 
     i % 2 === 0
       ? input_boxes.push(
-          <td>
+          <td key={"input" + i}>
             <input
               type="number"
               name={`item${i}`}
@@ -50,7 +50,7 @@ export default function UserInput({ toggleModal, update }) {
           </td>
         )
       : input_boxes.push(
-          <td>
+          <td key={"input" + i}>
             <input
               type="number"
               name={`item${i}`}
