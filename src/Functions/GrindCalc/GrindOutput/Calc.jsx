@@ -7,8 +7,8 @@ export default function Calc() {
   const [avgSilverPerHr, setAvgSilverPerHr] = useState(0);
 
   const updateData = (itemData) => {
+    console.log("calculating data");
     calcTotalSilverPerHr(itemData);
-    calcAvgSilverPerHr(calcTotalSilverPerHr(itemData));
   };
 
   const calcTotalSilverPerHr = (itemData) => {
@@ -18,23 +18,29 @@ export default function Calc() {
         x += itemData[j][i] * sycraia[i].price;
       }
     }
+    console.log("updating total silver/hr");
     setTotalSilverPerHr(x);
+    console.log("current silver/hr: ", x);
+    calcAvgSilverPerHr(x, itemData);
   };
 
-  const calcAvgSilverPerHr = (itemData) => setAvgSilverPerHr(totalSilverPerHr / itemData.length);
+  const calcAvgSilverPerHr = (x, itemData) => {
+    console.log("current hours: ", itemData.length);
+    setAvgSilverPerHr(x / itemData.length);
+  };
 
   return (
     <div>
       <div className="grid grid-cols-5 gap-5">
         <div className="col-span-2 divbox">
-          <div className="text-3xl font-bold">Total Silver Made</div>
-          <div className="pt-3 text-5xl font-bold">
+          <div className="text-2xl font-bold">Total Silver Made</div>
+          <div className="pt-2 text-4xl font-bold">
             {Math.round(totalSilverPerHr).toLocaleString()}
           </div>
         </div>
         <div className="col-span-2 divbox">
-          <div className="text-3xl font-bold">Average Silver Per Hour</div>
-          <div className="pt-3 text-5xl font-bold">
+          <div className="text-2xl font-bold">Average Silver Per Hour</div>
+          <div className="pt-2 text-4xl font-bold">
             {Math.round(avgSilverPerHr).toLocaleString()}
           </div>
         </div>

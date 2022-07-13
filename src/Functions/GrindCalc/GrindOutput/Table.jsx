@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import GrindInput from "../GrindInput";
+import { func } from "../../../Components/Functions";
 import { sycraia, testData } from "../../../database";
 
 export default function Table({ update }) {
@@ -17,7 +18,12 @@ export default function Table({ update }) {
     update(newItemData);
   };
 
-  console.log("rendering table");
+  const initTableData = () => {
+    console.log("rendering table");
+    update(itemData);
+  };
+
+  initTableData();
   for (let i = 0; i < sycraia.length; i++) {
     item_icons.push(
       <th className="w-[80px] h-[30px] p-2">
@@ -29,9 +35,9 @@ export default function Table({ update }) {
   const calcSilverPerHr = (itemData, j) => {
     let x = 0;
     for (let i = 0; i < sycraia.length; i++) {
-      x += itemData[j - 1][i] * sycraia[i].price;
+      x += itemData[j][i] * sycraia[i].price;
     }
-    return Math.round(x).toLocaleString();
+    return func.formatNumber(x);
   };
 
   item_icons.push(<th className="w-[80px] p-2">Silver/hr</th>);
@@ -47,7 +53,7 @@ export default function Table({ update }) {
           );
     }
     single_output.push(
-      <td className="text-center font-bold p-2">{(itemData, j) => calcSilverPerHr(itemData, j)}</td>
+      <td className="text-center font-bold p-2">{calcSilverPerHr(itemData, j)}</td>
     );
     total_output.push(<tr>{single_output}</tr>);
   }
