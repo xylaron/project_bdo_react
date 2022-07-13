@@ -1,7 +1,7 @@
 # Self Notes
 
-- Change some components to reusuable components
-- Setup the GrindCalc so it can pass data smoothly between components
+- Fix Calculator so that it can load/update the grind data properly
+- Find the proper relation between Table and Calc component for optimal code
 
 ## Useful Links
 
