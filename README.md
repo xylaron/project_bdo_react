@@ -1,6 +1,6 @@
 # Self Notes
 
-- Fix errors that pop up in console(if even fixable)
+- Find why does the table renders twice in Table.jsx
 - Add Switch Between Sycraia and Orccamp
 - Add Edit/Delete function in Grind Calculator
 
