@@ -1,4 +1,4 @@
-export const func = {
+export const common = {
   //takes int and formats the int with "b", "m", "k"
   formatNumber: (int) => {
     let count = 0;

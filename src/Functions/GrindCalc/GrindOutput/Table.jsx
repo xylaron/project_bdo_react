@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import GrindInput from "../GrindInput";
-import { func } from "../../../Components/Functions";
+import { common } from "../../../Components/Common";
 import { sycraia, testData } from "../../../database";
 
 export default function Table({ update }) {
@@ -37,7 +37,7 @@ export default function Table({ update }) {
     for (let i = 0; i < sycraia.length; i++) {
       x += itemData[j][i] * sycraia[i].price;
     }
-    return func.formatNumber(x);
+    return common.formatNumber(x);
   };
 
   item_icons.push(<th className="w-[80px] p-2">Silver/hr</th>);
