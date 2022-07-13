@@ -1,11 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import GrindInput from "../GrindInput";
 import { sycraia, testData } from "../../../database";
-import { calcSilverPerHr } from "./Calc";
 
-export default function Table() {
+export default function Table({ update }) {
   let item_icons = [];
+  let total_output = [];
 
+  const [itemData, setItemData] = useState(testData);
+
+  const handleUpdate = (data) => {
+    console.log("received user input data");
+    const newItemData = [...itemData];
+    newItemData.push(data);
+    console.log(newItemData);
+    setItemData(newItemData);
+    update(newItemData);
+  };
+
+  console.log("rendering table");
   for (let i = 0; i < sycraia.length; i++) {
     item_icons.push(
       <th className="w-[80px] h-[30px] p-2">
@@ -13,23 +25,29 @@ export default function Table() {
       </th>
     );
   }
+
+  const calcSilverPerHr = (itemData, j) => {
+    let x = 0;
+    for (let i = 0; i < sycraia.length; i++) {
+      x += itemData[j - 1][i] * sycraia[i].price;
+    }
+    return Math.round(x).toLocaleString();
+  };
+
   item_icons.push(<th className="w-[80px] p-2">Silver/hr</th>);
-  let total_output = [];
-  for (let j = 0; j < testData.length; j++) {
+  for (let j = 0; j < itemData.length; j++) {
     let single_output = [];
     for (let i = 0; i < sycraia.length; i++) {
       j % 2 === 0
         ? single_output.push(
-            <td className="text-center font-bold bg-zinc-700/25 p-2">{testData[j][i]}</td>
+            <td className="text-center font-bold bg-zinc-700/25 p-2">{itemData[j][i]}</td>
           )
         : single_output.push(
-            <td className="text-center font-bold bg-zinc-700/50 p-2">{testData[j][i]}</td>
+            <td className="text-center font-bold bg-zinc-700/50 p-2">{itemData[j][i]}</td>
           );
     }
     single_output.push(
-      <td className="text-center font-bold p-2">
-        {Math.round(calcSilverPerHr(j)).toLocaleString()}
-      </td>
+      <td className="text-center font-bold p-2">{(itemData, j) => calcSilverPerHr(itemData, j)}</td>
     );
     total_output.push(<tr>{single_output}</tr>);
   }
@@ -44,7 +62,7 @@ export default function Table() {
           <tbody className="">{total_output}</tbody>
         </table>
         <div className="ml-5">
-          <GrindInput />
+          <GrindInput update={handleUpdate} />
         </div>
       </div>
     </div>

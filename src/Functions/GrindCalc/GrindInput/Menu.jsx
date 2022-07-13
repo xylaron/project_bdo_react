@@ -4,13 +4,12 @@ import { XIcon } from "@heroicons/react/solid";
 import UserInput from "./UserInput";
 import AddButton from "../../../Components/AddButton";
 
-export default function Menu() {
+export default function Menu({ update }) {
   let [isOpen, setIsOpen] = useState(false);
 
   function toggleModal() {
     isOpen ? setIsOpen(false) : setIsOpen(true);
   }
-
   return (
     <>
       <div>
@@ -41,7 +40,7 @@ export default function Menu() {
                 leaveTo="opacity-0 scale-95"
               >
                 <Dialog.Panel className="min-w-full min-h-full rounded-xl bg-zinc-900 p-5 text-left align-middle shadow-xl transition-all">
-                  <UserInput toggleModal={toggleModal} />
+                  <UserInput toggleModal={toggleModal} update={(data) => update(data)} />
                 </Dialog.Panel>
               </Transition.Child>
               <Transition.Child

@@ -3,8 +3,11 @@ import React, { useState } from "react";
 import AddButton from "../../../Components/AddButton";
 import { sycraia } from "../../../database";
 
-export default function UserInput({ toggleModal }) {
+export default function UserInput({ toggleModal, update }) {
   let obj = {};
+  let item_icons = [];
+  let input_boxes = [];
+
   for (let i = 0; i < sycraia.length; i++) {
     obj[`item${i}`] = "0";
   }
@@ -20,11 +23,12 @@ export default function UserInput({ toggleModal }) {
   const handleSubmit = (event) => {
     event.preventDefault();
     // console.log(Object.values(itemInput));
-    console.log(itemInput);
+    const itemInputConv = Object.values(itemInput).map((str) => {
+      return Number(str);
+    });
+    console.log(itemInputConv);
+    update(itemInputConv);
   };
-
-  let item_icons = [];
-  let input_boxes = [];
 
   for (let i = 0; i < sycraia.length; i++) {
     item_icons.push(
@@ -62,8 +66,12 @@ export default function UserInput({ toggleModal }) {
       <form onSubmit={handleSubmit}>
         <div className="bg-zinc-800 rounded-xl p-3">
           <table className="mx-auto">
-            <thead>{item_icons}</thead>
-            <tbody>{input_boxes}</tbody>
+            <thead>
+              <tr>{item_icons}</tr>
+            </thead>
+            <tbody>
+              <tr>{input_boxes}</tr>
+            </tbody>
           </table>
         </div>
         <div className="mt-5">

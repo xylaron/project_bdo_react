@@ -1,10 +1,10 @@
 import React from "react";
 import Menu from "./Menu";
 
-export default function GrindInput() {
+export default function GrindInput({ update }) {
   return (
     <div>
-      <Menu />
+      <Menu update={(data) => update(data)} />
     </div>
   );
 }
