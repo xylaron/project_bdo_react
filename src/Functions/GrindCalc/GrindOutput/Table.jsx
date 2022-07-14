@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import GrindInput from "../GrindInput";
-import Functions from "./Components/Functions";
+import Common from "./Components/Common";
 import Button from "../../../Components/Button";
 import { CurrencyDollarIcon } from "@heroicons/react/solid";
 import { sycraia } from "../../../database";
@@ -49,7 +49,7 @@ export default function Table({ updateCalcData }) {
     for (let i = 0; i < sycraia.length; i++) {
       x += itemData[j][i] * sycraia[i].price;
     }
-    return Functions.formatNumber(x);
+    return Common.formatNumber(x);
   };
 
   item_icons.push(
@@ -115,19 +115,19 @@ export default function Table({ updateCalcData }) {
             content="Random"
             onClick={() =>
               updateInputData([
-                Functions.randomNum(7500, 8500),
-                Functions.randomNum(150, 300),
-                Functions.randomNum(50, 55),
-                Functions.randomNum(50, 55),
-                Functions.randomNum(15, 25),
-                Functions.randomNum(5, 10),
-                Functions.randomNum(0, 3),
-                Functions.randomNum(0, 6),
-                Functions.randomNum(5, 15),
-                Functions.randomNum(0, 2),
-                Functions.randomNum(30, 60),
-                Functions.randomNum(40, 80),
-                Functions.randomNum(40, 80),
+                Common.randomNum(7500, 8500),
+                Common.randomNum(150, 300),
+                Common.randomNum(50, 55),
+                Common.randomNum(50, 55),
+                Common.randomNum(15, 25),
+                Common.randomNum(5, 10),
+                Common.randomNum(0, 3),
+                Common.randomNum(0, 6),
+                Common.randomNum(5, 15),
+                Common.randomNum(0, 2),
+                Common.randomNum(30, 60),
+                Common.randomNum(40, 80),
+                Common.randomNum(40, 80),
               ])
             }
           />
