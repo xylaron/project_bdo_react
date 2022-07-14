@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { sycraia } from "../../../database";
+import { INFO } from "../../../Components/Strings";
 import Table from "./Table";
 
 export default function Calc() {
@@ -47,23 +48,23 @@ export default function Calc() {
     <div>
       <div className="grid grid-cols-4 gap-5">
         <div className="col-span-1 divbox">
-          <div className="text-2xl font-medium">Total Silver Made</div>
+          <div className="text-2xl font-medium">{INFO.TOTAL_SILVER}</div>
           <div className="pt-2 text-4xl font-bold">{Math.round(totalSilver).toLocaleString()}</div>
         </div>
         <div className="col-span-1 divbox">
-          <div className="text-2xl font-medium">Average Silver Per Hour</div>
+          <div className="text-2xl font-medium">{INFO.AVG_SILVER}</div>
           <div className="pt-2 text-4xl font-bold">
             {isNaN(avgSilverPerHr) ? "0" : Math.round(avgSilverPerHr).toLocaleString()}
           </div>
         </div>
         <div className="col-span-1 divbox">
-          <div className="text-2xl font-medium">Average Trash Loot Per Hour</div>
+          <div className="text-2xl font-medium">{INFO.AVG_TRASH}</div>
           <div className="pt-2 text-4xl font-bold">
             {isNaN(avgTrashLoot) ? "0" : Math.round(avgTrashLoot).toLocaleString()}
           </div>
         </div>
         <div className="col-span-1 divbox">
-          <div className="text-2xl font-medium">Total Hours</div>
+          <div className="text-2xl font-medium">{INFO.TOTAL_HOUR}</div>
           <div className="pt-2 text-4xl font-bold">{Math.round(totalHours).toLocaleString()}</div>
         </div>
       </div>

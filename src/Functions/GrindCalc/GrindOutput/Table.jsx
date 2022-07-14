@@ -1,15 +1,16 @@
 import React, { useEffect, useState } from "react";
 import GrindInput from "../GrindInput";
-import func from "../../../Components/Common";
+import Functions from "./Components/Functions";
 import Button from "../../../Components/Button";
 import { CurrencyDollarIcon } from "@heroicons/react/solid";
-import { sycraia, testData } from "../../../database";
+import { sycraia } from "../../../database";
+import { WARNING } from "../../../Components/Strings";
 
 export default function Table({ updateCalcData }) {
   let item_icons = [];
   let total_output = [];
 
-  const [itemData, setItemData] = useState(testData);
+  const [itemData, setItemData] = useState([]);
 
   useEffect(() => {
     console.log("updating table");
@@ -48,7 +49,7 @@ export default function Table({ updateCalcData }) {
     for (let i = 0; i < sycraia.length; i++) {
       x += itemData[j][i] * sycraia[i].price;
     }
-    return func.formatNumber(x);
+    return Functions.formatNumber(x);
   };
 
   item_icons.push(
@@ -99,8 +100,10 @@ export default function Table({ updateCalcData }) {
             padding="3"
             content="Reset"
             onClick={() => {
-              console.log("!!!TABLE PURGED!!!");
-              setItemData([]);
+              if (window.confirm(WARNING.CLEAR_GRIND_TABLE)) {
+                console.log("!!!TABLE PURGED!!!");
+                setItemData([]);
+              }
             }}
           />
         </div>
@@ -112,19 +115,19 @@ export default function Table({ updateCalcData }) {
             content="Random"
             onClick={() =>
               updateInputData([
-                func.randomNum(7500, 8500),
-                func.randomNum(150, 300),
-                func.randomNum(50, 55),
-                func.randomNum(50, 55),
-                func.randomNum(15, 25),
-                func.randomNum(5, 10),
-                func.randomNum(0, 3),
-                func.randomNum(0, 6),
-                func.randomNum(5, 15),
-                func.randomNum(0, 2),
-                func.randomNum(30, 60),
-                func.randomNum(40, 80),
-                func.randomNum(40, 80),
+                Functions.randomNum(7500, 8500),
+                Functions.randomNum(150, 300),
+                Functions.randomNum(50, 55),
+                Functions.randomNum(50, 55),
+                Functions.randomNum(15, 25),
+                Functions.randomNum(5, 10),
+                Functions.randomNum(0, 3),
+                Functions.randomNum(0, 6),
+                Functions.randomNum(5, 15),
+                Functions.randomNum(0, 2),
+                Functions.randomNum(30, 60),
+                Functions.randomNum(40, 80),
+                Functions.randomNum(40, 80),
               ])
             }
           />

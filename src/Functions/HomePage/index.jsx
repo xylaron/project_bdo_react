@@ -1,76 +1,38 @@
 import React from "react";
+import { HOME } from "../../Components/Strings";
 
 export default function HomePage() {
+  let table = [];
+  for (let i = 0; i < HOME.TECH_TABLE_CONTENT.length; i++) {
+    table.push(
+      <tr>
+        <td>{i + 1}</td>
+        <td>{HOME.TECH_TABLE_CONTENT[i].NAME}</td>
+        <td>{HOME.TECH_TABLE_CONTENT[i].DESC}</td>
+      </tr>
+    );
+  }
+
   return (
     <div className="">
       <div className="divbox">
-        <div className="text-xl font-bold mb-10">Welcome to Project Scuffed.</div>
-        <div className="text-lg">
-          This is a small side project of mine to learn web development.
-        </div>
-        <div className="text-lg mb-10">
-          The main goal of this project is to learn all the different popular frameworks that are
-          commonly used.
-        </div>
-        <div className="text-lg mb-10">
-          This website is going to contain all the different functions/features with no specific
-          category (yet).
-        </div>
+        <div className="text-xl font-bold mb-10">{HOME.WELCOME}</div>
+        <div className="text-lg">{HOME.INTRO} </div>
+        <div className="text-lg mb-10">{HOME.GOAL} </div>
+        <div className="text-lg mb-10">{HOME.FUNC} </div>
       </div>
       <div>
         <div className="divbox mt-5">
-          <div className="text-lg mb-5">
-            These are the technologies that I am currently using on this site:
-          </div>
+          <div className="text-lg mb-5">{HOME.TECH_INTRO}</div>
           <table className="table table-compact min-w-screen">
             <thead>
               <tr>
                 <th></th>
-                <td>Name</td>
-                <td>My Understanding so far</td>
+                <th>{HOME.TECH_TABLE_HEADER_NAME}</th>
+                <th>{HOME.TECH_TABLE_HEADER_DESC}</th>
               </tr>
             </thead>
-            <tbody>
-              <tr>
-                <th>1</th>
-                <td>React.js</td>
-                <td>Main frontend framework for writing features and functions</td>
-              </tr>
-              <tr>
-                <th>2</th>
-                <td>React Router</td>
-                <td>
-                  Used to link all the different pages together and switch without page reload
-                </td>
-              </tr>
-              <tr>
-                <th>3</th>
-                <td>Tailwind CSS</td>
-                <td>Saves me time not writing CSS code, just change class names</td>
-              </tr>
-              <tr>
-                <th>4</th>
-                <td>Daisy UI</td>
-                <td>Preset UI compoments that work with Tailwind CSS</td>
-              </tr>
-              <tr>
-                <th>5</th>
-                <td>Node.js</td>
-                <td>
-                  All the installations of different frameworks and running the development server
-                </td>
-              </tr>
-              <tr>
-                <th>6</th>
-                <td>Headless UI</td>
-                <td>React UI components that can be styled with Tailwind CSS</td>
-              </tr>
-              <tr>
-                <th>7</th>
-                <td>Hero Icons</td>
-                <td>React Icon SVGs that can be directly imported into the project</td>
-              </tr>
-            </tbody>
+            <tbody>{table}</tbody>
           </table>
         </div>
       </div>

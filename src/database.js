@@ -1,5 +1,3 @@
-import func from "./Components/Common";
-
 export const tax = 0.85475; //Marketplace Tax Value for player
 
 export const sycraia = [
@@ -94,14 +92,4 @@ export const orccamp = [
   { icon: require("./Assets/item_icons/8133.png"), price: 10000000 },
   { icon: require("./Assets/item_icons/5956.png"), price: 20200 },
   { icon: require("./Assets/item_icons/752023.png"), price: 50000 },
-];
-
-//prettier-ignore
-export let testData = [
-  [func.randomNum(7500, 8500), func.randomNum(150, 300), func.randomNum(50, 55), func.randomNum(50, 55), func.randomNum(15, 25), func.randomNum(5, 10), func.randomNum(0, 3), func.randomNum(0, 6), func.randomNum(5, 15), func.randomNum(0, 2), func.randomNum(30, 60), func.randomNum(40, 80), func.randomNum(40, 80)],
-  [func.randomNum(7500, 8500), func.randomNum(150, 300), func.randomNum(50, 55), func.randomNum(50, 55), func.randomNum(15, 25), func.randomNum(5, 10), func.randomNum(0, 3), func.randomNum(0, 6), func.randomNum(5, 15), func.randomNum(0, 2), func.randomNum(30, 60), func.randomNum(40, 80), func.randomNum(40, 80)],
-  [func.randomNum(7500, 8500), func.randomNum(150, 300), func.randomNum(50, 55), func.randomNum(50, 55), func.randomNum(15, 25), func.randomNum(5, 10), func.randomNum(0, 3), func.randomNum(0, 6), func.randomNum(5, 15), func.randomNum(0, 2), func.randomNum(30, 60), func.randomNum(40, 80), func.randomNum(40, 80)],
-  [func.randomNum(7500, 8500), func.randomNum(150, 300), func.randomNum(50, 55), func.randomNum(50, 55), func.randomNum(15, 25), func.randomNum(5, 10), func.randomNum(0, 3), func.randomNum(0, 6), func.randomNum(5, 15), func.randomNum(0, 2), func.randomNum(30, 60), func.randomNum(40, 80), func.randomNum(40, 80)],
-  [func.randomNum(7500, 8500), func.randomNum(150, 300), func.randomNum(50, 55), func.randomNum(50, 55), func.randomNum(15, 25), func.randomNum(5, 10), func.randomNum(0, 3), func.randomNum(0, 6), func.randomNum(5, 15), func.randomNum(0, 2), func.randomNum(30, 60), func.randomNum(40, 80), func.randomNum(40, 80)],
-  [func.randomNum(7500, 8500), func.randomNum(150, 300), func.randomNum(50, 55), func.randomNum(50, 55), func.randomNum(15, 25), func.randomNum(5, 10), func.randomNum(0, 3), func.randomNum(0, 6), func.randomNum(5, 15), func.randomNum(0, 2), func.randomNum(30, 60), func.randomNum(40, 80), func.randomNum(40, 80)],
 ];

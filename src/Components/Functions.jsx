@@ -1,4 +1,4 @@
-const func = {
+const Functions = {
   //takes int and formats the int with "b", "m", "k"
   formatNumber: (int) => {
     let count = 0;
@@ -23,4 +23,4 @@ const func = {
   randomNum: (min, max) => Math.floor(Math.random() * (max - min + 1) + min),
 };
 
-export default func;
+export default Functions;

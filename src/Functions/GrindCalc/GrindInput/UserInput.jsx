@@ -65,7 +65,7 @@ export default function UserInput({ toggleModal, updateInputData }) {
         </div>
         <div className="mt-5">
           <Button
-            type="button"
+            type="submit"
             onClick={toggleModal}
             colour="green-600"
             padding="3"
