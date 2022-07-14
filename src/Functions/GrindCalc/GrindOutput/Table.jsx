@@ -1,20 +1,22 @@
 import React, { useEffect, useState } from "react";
 import GrindInput from "../GrindInput";
 import func from "../../../Components/Common";
+import Button from "../../../Components/Button";
+import { CurrencyDollarIcon } from "@heroicons/react/solid";
 import { sycraia, testData } from "../../../database";
 
-export default function Table({ update }) {
+export default function Table({ updateCalcData }) {
   let item_icons = [];
   let total_output = [];
 
   const [itemData, setItemData] = useState(testData);
 
   useEffect(() => {
-    console.log("rendering table");
-    update(itemData);
-  }, [itemData]);
+    console.log("updating table");
+    updateCalcData(itemData);
+  }, [itemData]); // eslint-disable-line react-hooks/exhaustive-deps
 
-  const handleUpdate = (data) => {
+  const updateInputData = (data) => {
     console.log("received user input data");
     const newItemData = [...itemData];
     newItemData.push(data);
@@ -24,8 +26,19 @@ export default function Table({ update }) {
 
   for (let i = 0; i < sycraia.length; i++) {
     item_icons.push(
-      <th key={"tableicon" + i} className="w-[80px] h-[30px] p-2">
-        <img className="mx-auto" src={sycraia[i].icon} alt="icon" />
+      <th key={"tableicon" + i} className="w-[80px] h-[30px] p-2 group">
+        <div className="relative">
+          <a
+            href={`https://bdocodex.com/us/item/${sycraia[i].id}/`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img className="item-icon" src={sycraia[i].icon} alt="icon" />
+          </a>
+          {/* <div className="absolute flex inset-0 justify-center items-center bg-zinc-900 opacity-0 group-hover:opacity-100 duration-150 z-10 p-2 text-md">
+            {sycraia[i].name}
+          </div> */}
+        </div>
       </th>
     );
   }
@@ -40,26 +53,26 @@ export default function Table({ update }) {
 
   item_icons.push(
     <th key={"itemTotal"} className="w-[80px] p-2">
-      Silver/hr
+      <CurrencyDollarIcon className="w-12 mx-auto" />
     </th>
   );
   for (let j = 0; j < itemData.length; j++) {
     let single_output = [];
     for (let i = 0; i < sycraia.length; i++) {
-      j % 2 === 0
-        ? single_output.push(
-            <td key={`itemData[${j}][${i}]`} className="text-center font-bold bg-zinc-700/25 p-2">
-              {itemData[j][i]}
-            </td>
-          )
-        : single_output.push(
-            <td key={`itemData[${j}][${i}]`} className="text-center font-bold bg-zinc-700/50 p-2">
-              {itemData[j][i]}
-            </td>
-          );
+      single_output.push(
+        <td
+          key={`itemData[${j}][${i}]`}
+          className={`text-center font-medium p-2 bg-zinc-700/${j % 2 === 0 ? "25" : "50"}`}
+        >
+          {itemData[j][i]}
+        </td>
+      );
     }
     single_output.push(
-      <td key={`itemData[${j}]total`} className="text-center font-bold p-2">
+      <td
+        key={`itemData[${j}]total`}
+        className={`text-center font-medium p-2 bg-zinc-700/${j % 2 === 0 ? "25" : "50"}`}
+      >
         {calcSilverPerHr(itemData, j)}
       </td>
     );
@@ -76,8 +89,47 @@ export default function Table({ update }) {
           <tbody className="">{total_output}</tbody>
         </table>
         <div className="ml-5">
-          <GrindInput update={handleUpdate} />
+          <GrindInput updateInputData={updateInputData} />
         </div>
+        {/* DEBUG BUTTONS TO CLEAR/ADD RANDOM DATA */}
+        <div className="ml-5">
+          <Button
+            type="button"
+            colour="red-500"
+            padding="3"
+            content="Reset"
+            onClick={() => {
+              console.log("!!!TABLE PURGED!!!");
+              setItemData([]);
+            }}
+          />
+        </div>
+        <div className="ml-5">
+          <Button
+            type="button"
+            colour="blue-500"
+            padding="3"
+            content="Random"
+            onClick={() =>
+              updateInputData([
+                func.randomNum(7500, 8500),
+                func.randomNum(150, 300),
+                func.randomNum(50, 55),
+                func.randomNum(50, 55),
+                func.randomNum(15, 25),
+                func.randomNum(5, 10),
+                func.randomNum(0, 3),
+                func.randomNum(0, 6),
+                func.randomNum(5, 15),
+                func.randomNum(0, 2),
+                func.randomNum(30, 60),
+                func.randomNum(40, 80),
+                func.randomNum(40, 80),
+              ])
+            }
+          />
+        </div>
+        {/*---------------------------------------*/}
       </div>
     </div>
   );

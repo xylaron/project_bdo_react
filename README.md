@@ -22,6 +22,14 @@ GitHub Repo Page
 
 - https://github.com/xylaron/project_bdo_react
 
+React API Fetching Tutorial
+
+- https://www.geeksforgeeks.org/how-to-fetch-data-from-an-api-in-reactjs/
+
+Arsha.io BDO Market API (Postman)
+
+- https://www.postman.com/bdomarket/workspace/arsha-io-bdo-market-api/
+
 ## Current Used Technologies
 
 - React.js

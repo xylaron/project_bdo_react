@@ -1,9 +1,9 @@
 import React from "react";
-import { NavLink, useLocation } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 export default function Navbar() {
   return (
-    <div className="navbar bg-zinc-800 border-white fixed shadow-xl z-10">
+    <div className="navbar bg-zinc-800 border-white fixed shadow-xl z-30">
       <div className="flex-1">
         <NavLink to="/#" className="normal-case text-white text-[30px] font-bold mx-5">
           Scuffed

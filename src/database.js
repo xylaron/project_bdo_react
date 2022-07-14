@@ -2,24 +2,87 @@ import func from "./Components/Common";
 
 export const tax = 0.85475; //Marketplace Tax Value for player
 
-//prettier-ignore
 export const sycraia = [
-  { icon: require("./Assets/item_icons/44380.png"), price: 18000 },
-  { icon: require("./Assets/item_icons/44381.png"), price: 10000 },
-  { icon: require("./Assets/item_icons/16002.png"), price: 148000 * tax },
-  { icon: require("./Assets/item_icons/16001.png"), price: 140000 * tax },
-  { icon: require("./Assets/item_icons/768160.png"), price: 2570000 * tax },
-  { icon: require("./Assets/item_icons/40545.png"), price: 1230000 * tax },
-  { icon: require("./Assets/item_icons/40547.png"), price: 180320000 * tax },
-  { icon: require("./Assets/item_icons/40548.png"), price: 3680000 * tax },
-  { icon: require("./Assets/item_icons/16017.png"), price: 540000 * tax },
-  { icon: require("./Assets/item_icons/12061.png"), price: 184000000 * tax },
-  { icon: require("./Assets/item_icons/721003.png"), price: 3000000 * tax },
-  { icon: require("./Assets/item_icons/721002.png"), price: 541000 * tax },
-  { icon: require("./Assets/item_icons/9774.png"), price: 2908200 * tax },
+  {
+    id: 44380,
+    name: "Underwater Ancient Weapon Power Stone",
+    icon: require("./Assets/item_icons/44380.png"),
+    price: 18000,
+  },
+  {
+    id: 44381,
+    name: "Mossy Ancient Ruins Fragment",
+    icon: require("./Assets/item_icons/44381.png"),
+    price: 10000,
+  },
+  {
+    id: 16002,
+    name: "Black Stone (Armor)",
+    icon: require("./Assets/item_icons/16002.png"),
+    price: 148000 * tax,
+  },
+  {
+    id: 16001,
+    name: "Black Stone (Weapon)",
+    icon: require("./Assets/item_icons/16001.png"),
+    price: 140000 * tax,
+  },
+  {
+    id: 768160,
+    name: "Sealed Black Magic Crystal",
+    icon: require("./Assets/item_icons/768160.png"),
+    price: 2570000 * tax,
+  },
+  {
+    id: 40545,
+    name: "Ancient Creature's Scale",
+    icon: require("./Assets/item_icons/40545.png"),
+    price: 1230000 * tax,
+  },
+  {
+    id: 40547,
+    name: "Ancient Seal - Red Shard",
+    icon: require("./Assets/item_icons/40547.png"),
+    price: 180320000 * tax,
+  },
+  {
+    id: 40548,
+    name: "Ancient Seal - Black Shard",
+    icon: require("./Assets/item_icons/40548.png"),
+    price: 3680000 * tax,
+  },
+  {
+    id: 16017,
+    name: "Traveler's Map",
+    icon: require("./Assets/item_icons/16017.png"),
+    price: 540000 * tax,
+  },
+  {
+    id: 12061,
+    name: "Tungrad Ring",
+    icon: require("./Assets/item_icons/12061.png"),
+    price: 184000000 * tax,
+  },
+  {
+    id: 721003,
+    name: "Caphras Stone",
+    icon: require("./Assets/item_icons/721003.png"),
+    price: 3000000 * tax,
+  },
+  {
+    id: 721002,
+    name: "Ancient Spirit Dust",
+    icon: require("./Assets/item_icons/721002.png"),
+    price: 541000 * tax,
+  },
+  {
+    id: 9774,
+    name: "Abyssal Essence",
+    icon: require("./Assets/item_icons/9774.png"),
+    price: 2908200 * tax,
+  },
 ];
 
-//prettier-ignore
 export const orccamp = [
   { icon: require("./Assets/item_icons/44482.png"), price: 18500 },
   { icon: require("./Assets/item_icons/16002.png"), price: 148000 * tax },

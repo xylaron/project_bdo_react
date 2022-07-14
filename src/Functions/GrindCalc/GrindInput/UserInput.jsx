@@ -1,9 +1,10 @@
 /* eslint-disable no-loop-func */
 import React, { useState } from "react";
-import AddButton from "../../../Components/AddButton";
+import Button from "../../../Components/Button";
+import { PlusIcon } from "@heroicons/react/solid";
 import { sycraia } from "../../../database";
 
-export default function UserInput({ toggleModal, update }) {
+export default function UserInput({ toggleModal, updateInputData }) {
   let obj = {};
   let item_icons = [];
   let input_boxes = [];
@@ -27,39 +28,27 @@ export default function UserInput({ toggleModal, update }) {
       return Number(str);
     });
     console.log("current input data: ", itemInputConv);
-    update(itemInputConv);
+    updateInputData(itemInputConv);
   };
 
   for (let i = 0; i < sycraia.length; i++) {
     item_icons.push(
       <th key={"itemicon" + i} className="w-[80px] h-[30px] p-2">
-        <img className="mx-auto" src={sycraia[i].icon} alt="icon" />
+        <img className="item-icon" src={sycraia[i].icon} alt="icon" />
       </th>
     );
 
-    i % 2 === 0
-      ? input_boxes.push(
-          <td key={"input" + i}>
-            <input
-              type="number"
-              name={`item${i}`}
-              className="input rounded-lg border-zinc-700 w-20 px-2 py-1 text-center font-bold text-lg bg-zinc-900/75"
-              placeholder="0"
-              onChange={handleChange}
-            />
-          </td>
-        )
-      : input_boxes.push(
-          <td key={"input" + i}>
-            <input
-              type="number"
-              name={`item${i}`}
-              className="input rounded-lg border-zinc-700 w-20 px-2 py-1 text-center font-bold text-lg bg-zinc-900"
-              placeholder="0"
-              onChange={handleChange}
-            />
-          </td>
-        );
+    input_boxes.push(
+      <td key={"input" + i}>
+        <input
+          type="number"
+          name={`item${i}`}
+          className="input rounded-lg border-zinc-700 w-20 px-2 py-1 text-center font-bold text-lg bg-zinc-900"
+          placeholder="0"
+          onChange={handleChange}
+        />
+      </td>
+    );
   }
   return (
     <div>
@@ -75,7 +64,13 @@ export default function UserInput({ toggleModal, update }) {
           </table>
         </div>
         <div className="mt-5">
-          <AddButton type="submit" onClick={toggleModal} />
+          <Button
+            type="button"
+            onClick={toggleModal}
+            colour="green-600"
+            padding="3"
+            content={<PlusIcon className="w-6 h-6" />}
+          />
         </div>
       </form>
     </div>

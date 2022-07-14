@@ -1,10 +1,10 @@
 import { Dialog, Transition } from "@headlessui/react";
 import { Fragment, useState } from "react";
-import { XIcon } from "@heroicons/react/solid";
+import { XIcon, PlusIcon } from "@heroicons/react/solid";
 import UserInput from "./UserInput";
-import AddButton from "../../../Components/AddButton";
+import Button from "../../../Components/Button";
 
-export default function Menu({ update }) {
+export default function Menu({ updateInputData }) {
   let [isOpen, setIsOpen] = useState(false);
 
   function toggleModal() {
@@ -14,10 +14,16 @@ export default function Menu({ update }) {
   return (
     <>
       <div>
-        <AddButton type="button" onClick={toggleModal} />
+        <Button
+          type="button"
+          onClick={toggleModal}
+          colour="green-600"
+          padding="3"
+          content={<PlusIcon className="w-6 h-6" />}
+        />
       </div>
       <Transition appear show={isOpen} as={Fragment}>
-        <Dialog as="div" className="relative z-20" onClose={() => setIsOpen(true)}>
+        <Dialog as="div" className="relative z-50" onClose={() => setIsOpen(true)}>
           <Transition.Child
             as={Fragment}
             enter="ease-out duration-300"
@@ -41,7 +47,10 @@ export default function Menu({ update }) {
                 leaveTo="opacity-0 scale-95"
               >
                 <Dialog.Panel className="min-w-full min-h-full rounded-xl bg-zinc-900 p-5 text-left align-middle shadow-xl transition-all">
-                  <UserInput toggleModal={toggleModal} update={(data) => update(data)} />
+                  <UserInput
+                    toggleModal={toggleModal}
+                    updateInputData={(data) => updateInputData(data)}
+                  />
                 </Dialog.Panel>
               </Transition.Child>
               <Transition.Child
