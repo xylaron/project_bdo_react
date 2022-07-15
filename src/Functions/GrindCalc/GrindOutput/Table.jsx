@@ -1,16 +1,15 @@
 import React, { useEffect, useState } from "react";
 import GrindInput from "../GrindInput";
 import Common from "../../../Components/Common";
-import Button from "../../../Components/Button";
+import Debug from "./Debug";
 import { CurrencyDollarIcon } from "@heroicons/react/solid";
 import { sycraia } from "../../../database";
-import { WARNING } from "../../../Components/Strings";
 
 const Table = ({ updateCalcData }) => {
-  let item_icons = [];
-  let total_output = [];
-
   const [itemData, setItemData] = useState([]);
+
+  let total_output = [];
+  let item_icons = [];
 
   useEffect(() => {
     console.log("updating table");
@@ -25,6 +24,14 @@ const Table = ({ updateCalcData }) => {
     setItemData(newItemData);
   };
 
+  const calcSilverPerHr = (itemData, j) => {
+    let x = 0;
+    for (let i = 0; i < sycraia.length; i++) {
+      x += itemData[j][i] * sycraia[i].price;
+    }
+    return Common.formatNumber(x);
+  };
+
   for (let i = 0; i < sycraia.length; i++) {
     item_icons.push(
       <th key={"tableicon" + i} className="group h-[30px] w-[80px] p-2">
@@ -36,21 +43,10 @@ const Table = ({ updateCalcData }) => {
           >
             <img className="item-icon" src={sycraia[i].icon} alt="icon" />
           </a>
-          {/* <div className="absolute flex inset-0 justify-center items-center bg-zinc-900 opacity-0 group-hover:opacity-100 duration-150 z-10 p-2 text-md">
-            {sycraia[i].name}
-          </div> */}
         </div>
       </th>
     );
   }
-
-  const calcSilverPerHr = (itemData, j) => {
-    let x = 0;
-    for (let i = 0; i < sycraia.length; i++) {
-      x += itemData[j][i] * sycraia[i].price;
-    }
-    return Common.formatNumber(x);
-  };
 
   item_icons.push(
     <th key={"itemTotal"} className="w-[80px] p-2">
@@ -86,7 +82,7 @@ const Table = ({ updateCalcData }) => {
 
   return (
     <div>
-      <div className="flex">
+      <div className="flex overflow-auto">
         <table className="relative overflow-hidden rounded-xl bg-zinc-800">
           <thead className="">
             <tr>{item_icons}</tr>
@@ -96,49 +92,7 @@ const Table = ({ updateCalcData }) => {
         <div className="ml-5">
           <GrindInput updateInputData={updateInputData} />
         </div>
-        {/* DEBUG BUTTONS TO CLEAR/ADD RANDOM DATA */}
-        <div className="ml-5">
-          <Button
-            type="button"
-            color="red"
-            padding="3"
-            onClick={() => {
-              if (window.confirm(WARNING.CLEAR_GRIND_TABLE)) {
-                console.log("!!!TABLE PURGED!!!");
-                setItemData([]);
-              }
-            }}
-          >
-            Reset
-          </Button>
-        </div>
-        <div className="ml-5">
-          <Button
-            type="button"
-            color="blue"
-            padding="3"
-            onClick={() =>
-              updateInputData([
-                Common.randomNum(7500, 8500),
-                Common.randomNum(150, 300),
-                Common.randomNum(50, 55),
-                Common.randomNum(50, 55),
-                Common.randomNum(15, 25),
-                Common.randomNum(5, 10),
-                Common.randomNum(0, 3),
-                Common.randomNum(0, 6),
-                Common.randomNum(5, 15),
-                Common.randomNum(0, 2),
-                Common.randomNum(30, 60),
-                Common.randomNum(40, 80),
-                Common.randomNum(40, 80),
-              ])
-            }
-          >
-            Random
-          </Button>
-        </div>
-        {/*---------------------------------------*/}
+        <Debug setItemData={setItemData} updateInputData={updateInputData} />
       </div>
     </div>
   );
