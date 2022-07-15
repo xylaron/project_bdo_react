@@ -23,7 +23,6 @@ const UserInput = ({ toggleModal, updateInputData }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // console.log(Object.values(itemInput));
     const itemInputConv = Object.values(itemInput).map((str) => {
       return Number(str);
     });
