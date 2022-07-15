@@ -4,7 +4,7 @@ import { XIcon, PlusIcon } from "@heroicons/react/solid";
 import UserInput from "./UserInput";
 import Button from "../../../Components/Button";
 
-export default function Menu({ updateInputData }) {
+const Menu = ({ updateInputData }) => {
   let [isOpen, setIsOpen] = useState(false);
 
   function toggleModal() {
@@ -76,4 +76,6 @@ export default function Menu({ updateInputData }) {
       </Transition>
     </>
   );
-}
+};
+
+export default Menu;

@@ -3,7 +3,7 @@ import { sycraia } from "../../../database";
 import { INFO } from "../../../Components/Strings";
 import Table from "./Table";
 
-export default function Calc() {
+const Calc = () => {
   const [totalSilver, setTotalSilver] = useState(0);
   const [avgSilverPerHr, setAvgSilverPerHr] = useState(0);
   const [avgTrashLoot, setAvgTrashLoot] = useState(0);
@@ -73,4 +73,6 @@ export default function Calc() {
       </div>
     </div>
   );
-}
+};
+
+export default Calc;

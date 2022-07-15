@@ -4,7 +4,7 @@ import Button from "../../../Components/Button";
 import { PlusIcon } from "@heroicons/react/solid";
 import { sycraia } from "../../../database";
 
-export default function UserInput({ toggleModal, updateInputData }) {
+const UserInput = ({ toggleModal, updateInputData }) => {
   let obj = {};
   let item_icons = [];
   let input_boxes = [];
@@ -33,7 +33,7 @@ export default function UserInput({ toggleModal, updateInputData }) {
 
   for (let i = 0; i < sycraia.length; i++) {
     item_icons.push(
-      <th key={"itemicon" + i} className="w-[80px] h-[30px] p-2">
+      <th key={"itemicon" + i} className="h-[30px] w-[80px] p-2">
         <img className="item-icon" src={sycraia[i].icon} alt="icon" />
       </th>
     );
@@ -43,7 +43,7 @@ export default function UserInput({ toggleModal, updateInputData }) {
         <input
           type="number"
           name={`item${i}`}
-          className="input rounded-lg border-zinc-700 w-20 px-2 py-1 text-center font-bold text-lg bg-zinc-900"
+          className="input w-20 rounded-lg border-zinc-700 bg-zinc-900 px-2 py-1 text-center text-lg font-bold"
           placeholder="0"
           onChange={handleChange}
         />
@@ -53,7 +53,7 @@ export default function UserInput({ toggleModal, updateInputData }) {
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        <div className="bg-zinc-800 rounded-xl p-3">
+        <div className="rounded-xl bg-zinc-800 p-3">
           <table className="mx-auto">
             <thead>
               <tr>{item_icons}</tr>
@@ -65,10 +65,12 @@ export default function UserInput({ toggleModal, updateInputData }) {
         </div>
         <div className="mt-5">
           <Button type="submit" onClick={toggleModal} color="green" padding="3">
-            <PlusIcon className="w-6 h-6" />
+            <PlusIcon className="h-6 w-6" />
           </Button>
         </div>
       </form>
     </div>
   );
-}
+};
+
+export default UserInput;

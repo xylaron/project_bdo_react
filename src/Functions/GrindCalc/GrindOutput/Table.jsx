@@ -6,7 +6,7 @@ import { CurrencyDollarIcon } from "@heroicons/react/solid";
 import { sycraia } from "../../../database";
 import { WARNING } from "../../../Components/Strings";
 
-export default function Table({ updateCalcData }) {
+const Table = ({ updateCalcData }) => {
   let item_icons = [];
   let total_output = [];
 
@@ -142,4 +142,6 @@ export default function Table({ updateCalcData }) {
       </div>
     </div>
   );
-}
+};
+
+export default Table;
