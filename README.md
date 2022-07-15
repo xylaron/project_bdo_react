@@ -1,6 +1,6 @@
 # Self Notes
 
-- Find why does the table renders twice in Table.jsx
+- Fetch item prices from Market API
 - Add Switch Between Sycraia and Orccamp
 - Add Edit/Delete function in Grind Calculator
 
@@ -24,7 +24,8 @@ GitHub Repo Page
 
 React API Fetching Tutorial
 
-- https://www.geeksforgeeks.org/how-to-fetch-data-from-an-api-in-reactjs/
+- (Text Guide) https://designcode.io/react-hooks-handbook-fetch-data-from-an-api
+- (Sample Code) https://codesandbox.io/s/fetch-data-from-an-api-forked-2wxuij?file=/src/App.js
 
 Arsha.io BDO Market API (Postman)
 
