@@ -51,7 +51,7 @@ export default class TicTacToe extends React.Component {
       return (
         <li key={move}>
           <button
-            className="btn btn-sm mx-auto mb-1 text-black font-bold bg-white bg-opacity-100 hover:bg-white hover:bg-opacity-60 border-none"
+            className="btn btn-sm mx-auto mb-1 border-none bg-white bg-opacity-100 font-bold text-black hover:bg-white hover:bg-opacity-60"
             onClick={() => this.jumpTo(move)}
           >
             {desc}
@@ -70,12 +70,12 @@ export default class TicTacToe extends React.Component {
     }
 
     return (
-      <div className="flex flex-row bg-zinc-800 p-8 rounded-lg h-[495px]">
+      <div className="flex h-[495px] flex-row rounded-lg bg-zinc-800 p-8">
         <div>
           <Board squares={current.squares} onClick={(i) => this.handleClick(i)} />
         </div>
         <div className="ml-[50px]">
-          <div className="text-white font-bold pb-5 mb-[10px] text-[25px] ">{status}</div>
+          <div className="mb-[10px] pb-5 text-[25px] font-bold text-white ">{status}</div>
           <ol>{moves}</ol>
         </div>
       </div>

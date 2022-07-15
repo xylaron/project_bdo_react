@@ -4,7 +4,7 @@ import Navbar from "./Components/Navbar";
 
 export default function App() {
   return (
-    <div className="bg-zinc-900 min-h-screen min-w-screen">
+    <div className="min-w-screen min-h-screen bg-zinc-900">
       <div className="pb-[64px]">
         <Navbar />
       </div>

@@ -64,13 +64,9 @@ export default function UserInput({ toggleModal, updateInputData }) {
           </table>
         </div>
         <div className="mt-5">
-          <Button
-            type="submit"
-            onClick={toggleModal}
-            colour="green-600"
-            padding="3"
-            content={<PlusIcon className="w-6 h-6" />}
-          />
+          <Button type="submit" onClick={toggleModal} color="green" padding="3">
+            <PlusIcon className="w-6 h-6" />
+          </Button>
         </div>
       </form>
     </div>

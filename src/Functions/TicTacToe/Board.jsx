@@ -24,7 +24,7 @@ export default class Board extends React.Component {
 function Square(props) {
   return (
     <button
-      className="bg-zinc-700 text-white text-center font-bold text-[72px] mt-[-1px] mr-[-1px] w-[100px] h-[100px] border-[2px] border-solid border-white p-0 leading-10 float-left"
+      className="float-left mt-[-1px] mr-[-1px] h-[100px] w-[100px] border-[2px] border-solid border-white bg-zinc-700 p-0 text-center text-[72px] font-bold leading-10 text-white"
       onClick={props.onClick}
     >
       {props.value}

@@ -14,13 +14,9 @@ export default function Menu({ updateInputData }) {
   return (
     <>
       <div>
-        <Button
-          type="button"
-          onClick={toggleModal}
-          colour="green-600"
-          padding="3"
-          content={<PlusIcon className="w-6 h-6" />}
-        />
+        <Button type="button" onClick={toggleModal} color="green" padding="3">
+          <PlusIcon className="h-6 w-6" />
+        </Button>
       </div>
       <Transition appear show={isOpen} as={Fragment}>
         <Dialog as="div" className="relative z-50" onClose={() => setIsOpen(true)}>
@@ -46,7 +42,7 @@ export default function Menu({ updateInputData }) {
                 leaveFrom="opacity-100 scale-100"
                 leaveTo="opacity-0 scale-95"
               >
-                <Dialog.Panel className="min-w-full min-h-full rounded-xl bg-zinc-900 p-5 text-left align-middle shadow-xl transition-all">
+                <Dialog.Panel className="min-h-full min-w-full rounded-xl bg-zinc-900 p-5 text-left align-middle shadow-xl transition-all">
                   <UserInput
                     toggleModal={toggleModal}
                     updateInputData={(data) => updateInputData(data)}
@@ -62,15 +58,15 @@ export default function Menu({ updateInputData }) {
                 leaveFrom="opacity-100 scale-100"
                 leaveTo="opacity-0 scale-95"
               >
-                <div className="absolute top-0 right-0 p-3">
+                <div className="absolute top-0 right-0 m-2 rounded-full bg-white bg-opacity-0 hover:bg-opacity-10">
                   <button
                     type="button"
-                    className="btn btn-sm p-0 border-none hover:opacity-60"
+                    className="btn btn-sm border-none p-1 hover:bg-opacity-60"
                     onClick={() => {
                       toggleModal();
                     }}
                   >
-                    <XIcon className="w-6 h-6" />
+                    <XIcon className="h-6 w-6" />
                   </button>
                 </div>
               </Transition.Child>

@@ -11,11 +11,11 @@
 }
 
 .divbox {
-  @apply bg-zinc-800 rounded-xl p-5;
+  @apply rounded-xl bg-zinc-800 p-5;
 }
 
 .item-icon {
-  @apply p-0.5 mx-auto bg-zinc-900/75 rounded-full shadow-md shadow-zinc-900;
+  @apply mx-auto rounded-full bg-zinc-900/75 p-0.5 shadow-md shadow-zinc-900;
 }
 
 body,

@@ -16,15 +16,15 @@ export default function HomePage() {
   return (
     <div className="">
       <div className="divbox">
-        <div className="text-xl font-bold mb-10">{HOME.WELCOME}</div>
+        <div className="mb-10 text-xl font-bold">{HOME.WELCOME}</div>
         <div className="text-lg">{HOME.INTRO} </div>
-        <div className="text-lg mb-10">{HOME.GOAL} </div>
-        <div className="text-lg mb-10">{HOME.FUNC} </div>
+        <div className="mb-10 text-lg">{HOME.GOAL} </div>
+        <div className="mb-10 text-lg">{HOME.FUNC} </div>
       </div>
       <div>
         <div className="divbox mt-5">
-          <div className="text-lg mb-5">{HOME.TECH_INTRO}</div>
-          <table className="table table-compact min-w-screen">
+          <div className="mb-5 text-lg">{HOME.TECH_INTRO}</div>
+          <table className="min-w-screen table-compact table">
             <thead>
               <tr>
                 <th></th>

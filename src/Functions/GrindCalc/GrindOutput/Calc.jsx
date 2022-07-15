@@ -47,23 +47,23 @@ export default function Calc() {
   return (
     <div>
       <div className="grid grid-cols-4 gap-5">
-        <div className="col-span-1 divbox">
+        <div className="divbox col-span-1">
           <div className="text-2xl font-medium">{INFO.TOTAL_SILVER}</div>
           <div className="pt-2 text-4xl font-bold">{Math.round(totalSilver).toLocaleString()}</div>
         </div>
-        <div className="col-span-1 divbox">
+        <div className="divbox col-span-1">
           <div className="text-2xl font-medium">{INFO.AVG_SILVER}</div>
           <div className="pt-2 text-4xl font-bold">
             {isNaN(avgSilverPerHr) ? "0" : Math.round(avgSilverPerHr).toLocaleString()}
           </div>
         </div>
-        <div className="col-span-1 divbox">
+        <div className="divbox col-span-1">
           <div className="text-2xl font-medium">{INFO.AVG_TRASH}</div>
           <div className="pt-2 text-4xl font-bold">
             {isNaN(avgTrashLoot) ? "0" : Math.round(avgTrashLoot).toLocaleString()}
           </div>
         </div>
-        <div className="col-span-1 divbox">
+        <div className="divbox col-span-1">
           <div className="text-2xl font-medium">{INFO.TOTAL_HOUR}</div>
           <div className="pt-2 text-4xl font-bold">{Math.round(totalHours).toLocaleString()}</div>
         </div>

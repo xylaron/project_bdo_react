@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import GrindInput from "../GrindInput";
-import Common from "./Components/Common";
+import Common from "../../../Components/Common";
 import Button from "../../../Components/Button";
 import { CurrencyDollarIcon } from "@heroicons/react/solid";
 import { sycraia } from "../../../database";
@@ -27,7 +27,7 @@ export default function Table({ updateCalcData }) {
 
   for (let i = 0; i < sycraia.length; i++) {
     item_icons.push(
-      <th key={"tableicon" + i} className="w-[80px] h-[30px] p-2 group">
+      <th key={"tableicon" + i} className="group h-[30px] w-[80px] p-2">
         <div className="relative">
           <a
             href={`https://bdocodex.com/us/item/${sycraia[i].id}/`}
@@ -54,7 +54,7 @@ export default function Table({ updateCalcData }) {
 
   item_icons.push(
     <th key={"itemTotal"} className="w-[80px] p-2">
-      <CurrencyDollarIcon className="w-12 mx-auto" />
+      <CurrencyDollarIcon className="mx-auto w-12" />
     </th>
   );
   for (let j = 0; j < itemData.length; j++) {
@@ -63,7 +63,9 @@ export default function Table({ updateCalcData }) {
       single_output.push(
         <td
           key={`itemData[${j}][${i}]`}
-          className={`text-center font-medium p-2 bg-zinc-700/${j % 2 === 0 ? "25" : "50"}`}
+          className={`p-2 text-center font-medium ${
+            j % 2 === 0 ? "bg-zinc-700/25" : "bg-zinc-700/50"
+          }`}
         >
           {itemData[j][i]}
         </td>
@@ -72,7 +74,9 @@ export default function Table({ updateCalcData }) {
     single_output.push(
       <td
         key={`itemData[${j}]total`}
-        className={`text-center font-medium p-2 bg-zinc-700/${j % 2 === 0 ? "25" : "50"}`}
+        className={`p-2 text-center font-medium ${
+          j % 2 === 0 ? "bg-zinc-700/25" : "bg-zinc-700/50"
+        }`}
       >
         {calcSilverPerHr(itemData, j)}
       </td>
@@ -83,7 +87,7 @@ export default function Table({ updateCalcData }) {
   return (
     <div>
       <div className="flex">
-        <table className="relative bg-zinc-800 rounded-xl overflow-hidden">
+        <table className="relative overflow-hidden rounded-xl bg-zinc-800">
           <thead className="">
             <tr>{item_icons}</tr>
           </thead>
@@ -96,23 +100,23 @@ export default function Table({ updateCalcData }) {
         <div className="ml-5">
           <Button
             type="button"
-            colour="red-500"
+            color="red"
             padding="3"
-            content="Reset"
             onClick={() => {
               if (window.confirm(WARNING.CLEAR_GRIND_TABLE)) {
                 console.log("!!!TABLE PURGED!!!");
                 setItemData([]);
               }
             }}
-          />
+          >
+            Reset
+          </Button>
         </div>
         <div className="ml-5">
           <Button
             type="button"
-            colour="blue-500"
+            color="blue"
             padding="3"
-            content="Random"
             onClick={() =>
               updateInputData([
                 Common.randomNum(7500, 8500),
@@ -130,7 +134,9 @@ export default function Table({ updateCalcData }) {
                 Common.randomNum(40, 80),
               ])
             }
-          />
+          >
+            Random
+          </Button>
         </div>
         {/*---------------------------------------*/}
       </div>
