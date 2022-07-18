@@ -1,13 +1,20 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { sycraia } from "../../../database";
 import { INFO } from "../../../Components/Strings";
 import Table from "./Table";
+import getItemPriceData from "../../../API/getItemPriceData";
 
 const Calc = () => {
   const [totalSilver, setTotalSilver] = useState(0);
   const [avgSilverPerHr, setAvgSilverPerHr] = useState(0);
   const [avgTrashLoot, setAvgTrashLoot] = useState(0);
   const [totalHours, setTotalHours] = useState(0);
+  const [test, setTest] = useState([]);
+
+  useEffect(() => {
+    setTest(getItemPriceData(12061));
+    console.log(test);
+  }, []);
 
   const updateCalcData = (itemData) => {
     console.log("calculating data");

@@ -26,7 +26,7 @@ const Debug = ({ setItemData, updateInputData }) => {
           type="button"
           color="blue"
           padding="3"
-          onClick={() =>
+          onClick={() => {
             updateInputData([
               Common.randomNum(7500, 8500),
               Common.randomNum(150, 300),
@@ -41,8 +41,8 @@ const Debug = ({ setItemData, updateInputData }) => {
               Common.randomNum(30, 60),
               Common.randomNum(40, 80),
               Common.randomNum(40, 80),
-            ])
-          }
+            ]);
+          }}
         >
           Sample
         </Button>
