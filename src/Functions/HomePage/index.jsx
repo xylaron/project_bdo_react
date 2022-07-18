@@ -13,7 +13,7 @@ for (let i = 0; i < HOME.TECH_TABLE_CONTENT.length; i++) {
 }
 
 const HomePage = () => (
-  <div className="">
+  <>
     <div className="divbox">
       <div className="mb-10 text-xl font-bold">{HOME.WELCOME}</div>
       <div className="text-lg">{HOME.INTRO} </div>
@@ -35,7 +35,7 @@ const HomePage = () => (
         </table>
       </div>
     </div>
-  </div>
+  </>
 );
 
 export default HomePage;

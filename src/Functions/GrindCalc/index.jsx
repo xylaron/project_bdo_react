@@ -1,10 +1,12 @@
-import React from "react";
-import GrindOutput from "./GrindOutput";
+export { default } from "./GrindOutput";
 
-const GrindCalc = () => (
-  <div>
-    <GrindOutput />
-  </div>
-);
-
-export default GrindCalc;
+/* 
+Grind Calc Structure/Hierachy:
+- GrindOutput
+  - Calc
+    - Table
+      - Debug
+      - GrindInput
+        - Menu
+          - UserInput
+*/

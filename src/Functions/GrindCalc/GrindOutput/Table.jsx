@@ -81,19 +81,17 @@ const Table = ({ updateCalcData }) => {
   }
 
   return (
-    <div>
-      <div className="flex overflow-auto">
-        <table className="relative overflow-hidden rounded-xl bg-zinc-800">
-          <thead className="">
-            <tr>{item_icons}</tr>
-          </thead>
-          <tbody className="">{total_output}</tbody>
-        </table>
-        <div className="ml-5">
-          <GrindInput updateInputData={updateInputData} />
-        </div>
-        <Debug setItemData={setItemData} updateInputData={updateInputData} />
+    <div className="flex overflow-auto">
+      <table className="relative overflow-hidden rounded-xl bg-zinc-800">
+        <thead className="">
+          <tr>{item_icons}</tr>
+        </thead>
+        <tbody className="">{total_output}</tbody>
+      </table>
+      <div className="ml-5">
+        <GrindInput updateInputData={updateInputData} />
       </div>
+      <Debug setItemData={setItemData} updateInputData={updateInputData} />
     </div>
   );
 };

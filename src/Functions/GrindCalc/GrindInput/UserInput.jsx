@@ -50,25 +50,23 @@ const UserInput = ({ toggleModal, updateInputData }) => {
     );
   }
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <div className="rounded-xl bg-zinc-800 p-3">
-          <table className="mx-auto">
-            <thead>
-              <tr>{item_icons}</tr>
-            </thead>
-            <tbody>
-              <tr>{input_boxes}</tr>
-            </tbody>
-          </table>
-        </div>
-        <div className="mt-5">
-          <Button type="submit" onClick={toggleModal} color="green" padding="3">
-            <PlusIcon className="h-6 w-6" />
-          </Button>
-        </div>
-      </form>
-    </div>
+    <form onSubmit={handleSubmit}>
+      <div className="rounded-xl bg-zinc-800 p-3">
+        <table className="mx-auto">
+          <thead>
+            <tr>{item_icons}</tr>
+          </thead>
+          <tbody>
+            <tr>{input_boxes}</tr>
+          </tbody>
+        </table>
+      </div>
+      <div className="mt-5">
+        <Button type="submit" onClick={toggleModal} color="green" padding="3">
+          <PlusIcon className="h-6 w-6" />
+        </Button>
+      </div>
+    </form>
   );
 };
 

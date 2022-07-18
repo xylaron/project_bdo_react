@@ -45,7 +45,7 @@ const Calc = () => {
   };
 
   return (
-    <div>
+    <>
       <div className="grid grid-cols-4 gap-5">
         <div className="divbox col-span-1">
           <div className="text-2xl font-medium">{INFO.TOTAL_SILVER}</div>
@@ -71,7 +71,7 @@ const Calc = () => {
       <div className="mt-5">
         <Table updateCalcData={updateCalcData} />
       </div>
-    </div>
+    </>
   );
 };
 
