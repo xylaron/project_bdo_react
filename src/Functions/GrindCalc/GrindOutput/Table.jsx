@@ -1,9 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { createContext, useEffect, useState } from "react";
 import GrindInput from "../GrindInput";
 import Common from "../../../Components/Common";
 import Debug from "./Debug";
 import { CurrencyDollarIcon } from "@heroicons/react/solid";
 import { sycraia } from "../../../database";
+
+export const InputContext = createContext();
 
 const Table = ({ updateCalcData }) => {
   const [itemData, setItemData] = useState([]);
@@ -88,8 +90,11 @@ const Table = ({ updateCalcData }) => {
         </thead>
         <tbody className="">{total_output}</tbody>
       </table>
+
       <div className="ml-5">
-        <GrindInput updateInputData={updateInputData} />
+        <InputContext.Provider value={updateInputData}>
+          <GrindInput />
+        </InputContext.Provider>
       </div>
       <Debug setItemData={setItemData} updateInputData={updateInputData} />
     </div>

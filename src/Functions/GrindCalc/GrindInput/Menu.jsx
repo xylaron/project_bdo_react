@@ -4,22 +4,20 @@ import { XIcon, PlusIcon } from "@heroicons/react/solid";
 import UserInput from "./UserInput";
 import Button from "../../../Components/Button";
 
-const Menu = ({ updateInputData }) => {
-  let [isOpen, setIsOpen] = useState(false);
+const Menu = () => {
+  const [isOpen, setIsOpen] = useState(false);
 
-  function toggleModal() {
-    isOpen ? setIsOpen(false) : setIsOpen(true);
-    console.log(isOpen ? "grind input window close" : "grind input window open");
-  }
+  const toggleModal = () => (isOpen ? setIsOpen(false) : setIsOpen(true));
+
   return (
     <>
       <div>
-        <Button type="button" onClick={toggleModal} color="green" padding="3">
+        <Button type="button" onClick={() => setIsOpen(true)} color="green" padding="3">
           <PlusIcon className="h-6 w-6" />
         </Button>
       </div>
       <Transition appear show={isOpen} as={Fragment}>
-        <Dialog as="div" className="relative z-50" onClose={() => setIsOpen(true)}>
+        <Dialog as="div" className="relative z-40" onClose={() => setIsOpen(isOpen)}>
           <Transition.Child
             as={Fragment}
             enter="ease-out duration-300"
@@ -43,10 +41,7 @@ const Menu = ({ updateInputData }) => {
                 leaveTo="opacity-0 scale-95"
               >
                 <Dialog.Panel className="min-h-full min-w-full rounded-xl bg-zinc-900 p-5 text-left align-middle shadow-xl transition-all">
-                  <UserInput
-                    toggleModal={toggleModal}
-                    updateInputData={(data) => updateInputData(data)}
-                  />
+                  <UserInput toggleModal={toggleModal} />
                 </Dialog.Panel>
               </Transition.Child>
               <Transition.Child
@@ -62,9 +57,7 @@ const Menu = ({ updateInputData }) => {
                   <button
                     type="button"
                     className="btn btn-sm border-none p-1 hover:bg-opacity-60"
-                    onClick={() => {
-                      toggleModal();
-                    }}
+                    onClick={() => setIsOpen(false)}
                   >
                     <XIcon className="h-6 w-6" />
                   </button>

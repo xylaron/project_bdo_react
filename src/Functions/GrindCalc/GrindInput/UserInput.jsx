@@ -1,13 +1,17 @@
 /* eslint-disable no-loop-func */
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import Button from "../../../Components/Button";
+import { InputContext } from "../GrindOutput/Table";
 import { PlusIcon } from "@heroicons/react/solid";
 import { sycraia } from "../../../database";
 
-const UserInput = ({ toggleModal, updateInputData }) => {
+const UserInput = ({ toggleModal }) => {
   let obj = {};
   let item_icons = [];
   let input_boxes = [];
+
+  const updateInputData = useContext(InputContext);
+  const [isDisabled, setIsDisabled] = useState(false);
 
   for (let i = 0; i < sycraia.length; i++) {
     obj[`item${i}`] = "0";
@@ -23,10 +27,11 @@ const UserInput = ({ toggleModal, updateInputData }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    setIsDisabled(true);
     const itemInputConv = Object.values(itemInput).map((str) => {
       return Number(str);
     });
-    console.log("current input data: ", itemInputConv);
+    console.log(itemInputConv);
     updateInputData(itemInputConv);
   };
 
@@ -62,7 +67,7 @@ const UserInput = ({ toggleModal, updateInputData }) => {
         </table>
       </div>
       <div className="mt-5">
-        <Button type="submit" onClick={toggleModal} color="green" padding="3">
+        <Button type="submit" onClick={toggleModal} disabled={isDisabled} color="green" padding="3">
           <PlusIcon className="h-6 w-6" />
         </Button>
       </div>
