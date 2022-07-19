@@ -14,7 +14,7 @@ const Calc = () => {
   useEffect(() => {
     setTest(getItemPriceData(12061));
     console.log(test);
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   const updateCalcData = (itemData) => {
     console.log("calculating data");
