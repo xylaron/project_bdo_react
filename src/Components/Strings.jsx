@@ -60,5 +60,9 @@ export const HOME = {
       NAME: "Hero Icons",
       DESC: "React icon SVGs that can be directly imported into the project",
     },
+    {
+      NAME: "Storybook",
+      DESC: "UI component explorer to test specific components",
+    },
   ],
 };

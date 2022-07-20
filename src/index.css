@@ -8,6 +8,22 @@
     -webkit-appearance: none;
     margin: 0;
   }
+  ::-webkit-scrollbar {
+    width: 12px;
+  }
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #00000000;
+  }
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #3f3f46;
+    box-shadow: 0 0 5px #202020;
+  }
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #52525b;
+  }
 }
 
 .divbox {
@@ -22,4 +38,8 @@ body,
 div,
 table {
   @apply text-zinc-100;
+}
+
+body {
+  overflow: overlay;
 }
