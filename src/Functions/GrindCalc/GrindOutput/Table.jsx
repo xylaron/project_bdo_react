@@ -7,7 +7,7 @@ import { sycraia } from "../../../database";
 
 export const InputContext = createContext();
 
-const Table = ({ updateCalcData }) => {
+const Table = ({ updateCalcData, itemPrice, isLoading }) => {
   const [itemData, setItemData] = useState([]);
 
   let total_output = [];
@@ -16,7 +16,7 @@ const Table = ({ updateCalcData }) => {
   useEffect(() => {
     console.log("updating table");
     updateCalcData(itemData);
-  }, [itemData]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [itemData, itemPrice]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const updateInputData = (data) => {
     console.log("received user input data");
@@ -29,9 +29,9 @@ const Table = ({ updateCalcData }) => {
   const calcSilverPerHr = (itemData, j) => {
     let x = 0;
     for (let i = 0; i < sycraia.length; i++) {
-      x += itemData[j][i] * sycraia[i].price;
+      x += itemData[j][i] * itemPrice[i];
     }
-    return Common.formatNumber(x);
+    return Common.formatNumShort(x);
   };
 
   for (let i = 0; i < sycraia.length; i++) {
@@ -76,7 +76,7 @@ const Table = ({ updateCalcData }) => {
           j % 2 === 0 ? "bg-zinc-700/25" : "bg-zinc-700/50"
         }`}
       >
-        {calcSilverPerHr(itemData, j)}
+        {isLoading ? "Loading..." : calcSilverPerHr(itemData, j)}
       </td>
     );
     total_output.push(<tr key={"singleOutput" + j}>{single_output}</tr>);

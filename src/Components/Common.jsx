@@ -1,6 +1,6 @@
 const Common = {
   //takes int and formats the int with "b", "m", "k"
-  formatNumber: (int) => {
+  formatNumShort: (int) => {
     let count = 0;
     let check = int;
 
@@ -19,6 +19,8 @@ const Common = {
       return int.toString();
     }
   },
+
+  formatNumLong: (int) => Math.round(int).toLocaleString(),
 
   randomNum: (min, max) => Math.floor(Math.random() * (max - min + 1) + min),
 };
