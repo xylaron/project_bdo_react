@@ -17,21 +17,23 @@ const UserInput = ({ toggleModal }) => {
     obj[`item${i}`] = "0";
   }
 
-  const [itemInput, setItemInput] = useState(obj);
+  const [userInputData, setUserInputData] = useState(obj);
 
   const handleChange = (event) => {
     const name = event.target.name;
     const value = event.target.value;
-    setItemInput((values) => ({ ...values, [name]: value }));
+    setUserInputData((values) => ({ ...values, [name]: value }));
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
     setIsDisabled(true);
-    const itemInputConv = Object.values(itemInput).map((str) => {
+    const itemInput = Object.values(userInputData).slice(0, sycraia.length + 1);
+    // const inputSettings = Object.values(userInputData).slice(sycraia.length);
+    const itemInputConv = itemInput.map((str) => {
       return Number(str);
     });
-    console.log(itemInputConv);
+    console.log(userInputData);
     updateInputData(itemInputConv);
   };
 
