@@ -10,7 +10,6 @@ const Calc = () => {
   const [avgSilverPerHr, setAvgSilverPerHr] = useState(0);
   const [avgTrashLoot, setAvgTrashLoot] = useState(0);
   const [totalHours, setTotalHours] = useState(0);
-
   const [itemPrice, setItemPrice] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 

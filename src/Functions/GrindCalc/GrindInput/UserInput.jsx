@@ -58,7 +58,7 @@ const UserInput = ({ toggleModal }) => {
   }
   return (
     <form onSubmit={handleSubmit}>
-      <div className="rounded-xl bg-zinc-800 p-3">
+      <div className="divbox">
         <table className="mx-auto">
           <thead>
             <tr>{item_icons}</tr>
@@ -67,6 +67,20 @@ const UserInput = ({ toggleModal }) => {
             <tr>{input_boxes}</tr>
           </tbody>
         </table>
+      </div>
+      <div className="divbox mt-5">
+        <div className="">
+          <label className="label">
+            <span className="label-text font-bold">Family Fame</span>
+          </label>
+          <input
+            type="number"
+            name="family-fame"
+            className="input w-20 rounded-lg border-zinc-700 bg-zinc-900 px-2 py-1 text-center text-lg font-bold"
+            placeholder="0"
+            onChange={handleChange}
+          />
+        </div>
       </div>
       <div className="mt-5">
         <Button type="submit" onClick={toggleModal} disabled={isDisabled} color="green" padding="3">
