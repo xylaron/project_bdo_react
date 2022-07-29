@@ -28,32 +28,32 @@ const Calc = () => {
   };
 
   const calcTotalSilverPerHr = (itemData) => {
-    let x = 0;
+    let silver = 0;
     for (let j = 0; j < itemData.length; j++) {
       for (let i = 0; i < sycraia.length; i++) {
-        x += itemData[j][i] * itemPrice[i];
+        silver += itemData[j][i] * itemPrice[i];
       }
     }
     console.log("updating total silver");
-    setTotalSilver(x);
+    setTotalSilver(silver);
     console.log("current silver/hr: ", Common.formatNumLong(x));
-    calcAvgSilverPerHr(x, itemData);
+    calcAvgSilverPerHr(silver, itemData);
   };
 
-  const calcAvgSilverPerHr = (x, itemData) => {
+  const calcAvgSilverPerHr = (silver, itemData) => {
     console.log("current hours: ", itemData.length);
-    console.log("avg silver/hr: ", Common.formatNumLong(x / itemData.length));
-    setAvgSilverPerHr(x / itemData.length);
+    console.log("avg silver/hr: ", Common.formatNumLong(silver / itemData.length));
+    setAvgSilverPerHr(silver / itemData.length);
     calcAvgTrashLoot(itemData);
   };
 
   const calcAvgTrashLoot = (itemData) => {
-    let x = 0;
+    let silver = 0;
     for (let i = 0; i < itemData.length; i++) {
-      x += itemData[i][0];
+      silver += itemData[i][0];
     }
-    console.log("avg trash loot: ", Common.formatNumLong(x / itemData.length));
-    setAvgTrashLoot(x / itemData.length);
+    console.log("avg trash loot: ", Common.formatNumLong(silver / itemData.length));
+    setAvgTrashLoot(silver / itemData.length);
   };
 
   return (
