@@ -1,7 +1,7 @@
 import React from "react";
 import { HOME } from "../../Components/Strings";
 
-let table = [];
+let tech_table = [];
 for (let i = 0; i < HOME.TECH_TABLE_CONTENT.length; i++) {
   table.push(
     <tr>
@@ -31,7 +31,7 @@ const HomePage = () => (
               <th>{HOME.TECH_TABLE_HEADER_DESC}</th>
             </tr>
           </thead>
-          <tbody>{table}</tbody>
+          <tbody>{tech_table}</tbody>
         </table>
       </div>
     </div>

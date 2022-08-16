@@ -1,10 +1,20 @@
 # Self Notes
 
-- Fetch item prices from Market API
+## To-Do List
+
+GrindCalc:
+
 - Add Switch Between Sycraia and Orccamp
 - Add Edit/Delete function in Grind Calculator
-- Manage folder structure
+- Manage folder structure/naming
 - Change imports to absolute path
+
+EnhanceSim (future failstack simulator):
+
+- formulas that takes in failstacks and outputs a number between 0 and 100 by 2 decimal aka success rate
+- a button that rolls a number between 0 and 100 by 2 decimal
+- indicate success or fail if the number is smaller than the the success rate
+- if success, reset failstack to 0, if fail, according to gear selection, add to the total failstack
 
 ## Useful Links
 
@@ -42,3 +52,5 @@ Arsha.io BDO Market API (Postman)
 - DaisyUI
 - Headless UI
 - Hero Icons
+- Storyboard (testing)
+- Axios

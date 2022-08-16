@@ -64,5 +64,9 @@ export const HOME = {
       NAME: "Storybook",
       DESC: "UI component explorer to test specific components",
     },
+    {
+      NAME: "Axios",
+      DESC: "Fetching data from API calls",
+    },
   ],
 };
