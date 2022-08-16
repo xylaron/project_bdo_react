@@ -3,6 +3,8 @@
 - Fetch item prices from Market API
 - Add Switch Between Sycraia and Orccamp
 - Add Edit/Delete function in Grind Calculator
+- Manage folder structure
+- Change imports to absolute path
 
 ## Useful Links
 
