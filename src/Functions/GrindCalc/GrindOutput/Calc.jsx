@@ -36,7 +36,7 @@ const Calc = () => {
     }
     console.log("updating total silver");
     setTotalSilver(silver);
-    console.log("current silver/hr: ", Common.formatNumLong(x));
+    console.log("current silver/hr: ", Common.formatNumLong(silver));
     calcAvgSilverPerHr(silver, itemData);
   };
 
