@@ -2,7 +2,7 @@ import { Dialog, Transition } from "@headlessui/react";
 import { Fragment, useState } from "react";
 import { XIcon, PlusIcon } from "@heroicons/react/solid";
 import UserInput from "./UserInput";
-import Button from "../../../Components/Button";
+import Button from "@Components/Button";
 
 const Menu = () => {
   const [isOpen, setIsOpen] = useState(false);
