@@ -1,5 +1,7 @@
 # Self Notes
 
+!!start to commit with messages instead of "c"!!
+
 ## To-Do List
 
 GrindCalc:
