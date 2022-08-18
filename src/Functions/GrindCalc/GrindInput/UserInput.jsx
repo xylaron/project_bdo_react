@@ -4,6 +4,7 @@ import Button from "../../../Components/Button";
 import { InputContext } from "../GrindOutput/Table";
 import { PlusIcon } from "@heroicons/react/solid";
 import { sycraia } from "../../../database";
+import UserAttr from "./UserAttr";
 
 const UserInput = ({ toggleModal }) => {
   let obj = {};
@@ -68,20 +69,9 @@ const UserInput = ({ toggleModal }) => {
           </tbody>
         </table>
       </div>
-      <div className="divbox mt-5">
-        <div className="">
-          <label className="label">
-            <span className="label-text font-bold">Family Fame</span>
-          </label>
-          <input
-            type="number"
-            name="family-fame"
-            className="input w-20 rounded-lg border-zinc-700 bg-zinc-900 px-2 py-1 text-center text-lg font-bold"
-            placeholder="0"
-            onChange={handleChange}
-          />
-        </div>
-      </div>
+      <UserAttr id="family-fame" handleChange={handleChange}>
+        Family Fame
+      </UserAttr>
       <div className="mt-5">
         <Button type="submit" onClick={toggleModal} disabled={isDisabled} color="green" padding="3">
           <PlusIcon className="h-6 w-6" />
