@@ -59,3 +59,4 @@ Arsha.io BDO Market API (Postman)
 - Storyboard (testing)
 - Axios
 - Postman (external tools)
+- Vercel (external build host)

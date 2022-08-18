@@ -72,5 +72,9 @@ export const HOME = {
       NAME: "Postman (External)",
       DESC: "Website for testing API calls before implementation",
     },
+    {
+      NAME: "Vercel (External)",
+      DESC: "Website for deploying build directly from GitHub repository",
+    },
   ],
 };
