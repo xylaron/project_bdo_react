@@ -6,10 +6,12 @@
 
 GrindCalc:
 
+- Add user attributes (family fame, value pack on?, merchant ring, etc.)
+  - Headless UI for on/off switches
+  - Input box for family fame input
+- Able to input hour and minutes grinded (instead of default 1hr)
 - Add Switch Between Sycraia and Orccamp
 - Add Edit/Delete function in Grind Calculator
-- Manage folder structure/naming
-- Change imports to absolute path
 
 EnhanceSim (future failstack simulator):
 
