@@ -68,5 +68,9 @@ export const HOME = {
       NAME: "Axios",
       DESC: "Fetching data from API calls",
     },
+    {
+      NAME: "Postman (External)",
+      DESC: "Website for testing API calls before implementation",
+    },
   ],
 };
