@@ -3,7 +3,7 @@ import { HOME } from "../../Components/Strings";
 
 let tech_table = [];
 for (let i = 0; i < HOME.TECH_TABLE_CONTENT.length; i++) {
-  table.push(
+  tech_table.push(
     <tr>
       <td>{i + 1}</td>
       <td>{HOME.TECH_TABLE_CONTENT[i].NAME}</td>
