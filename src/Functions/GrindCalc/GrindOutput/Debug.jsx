@@ -1,7 +1,7 @@
 import React from "react";
-import { WARNING } from "../../../Components/Strings";
-import Button from "../../../Components/Button";
-import Common from "../../../Components/Common";
+import { WARNING } from "src/Components/Strings";
+import Button from "src/Components/Button";
+import Common from "src/Components/Common";
 
 const Debug = ({ setItemData, updateInputData }) => {
   return (

@@ -1,9 +1,9 @@
 /* eslint-disable no-loop-func */
 import React, { useState, useContext } from "react";
-import Button from "../../../Components/Button";
+import Button from "src/Components/Button";
 import { InputContext } from "../GrindOutput/Table";
 import { PlusIcon } from "@heroicons/react/solid";
-import { sycraia } from "../../../database";
+import { sycraia } from "src/database";
 import UserAttr from "./UserAttr";
 
 const UserInput = ({ toggleModal }) => {

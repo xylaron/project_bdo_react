@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { sycraia } from "../../../database";
-import { INFO } from "../../../Components/Strings";
-import Common from "../../../Components/Common";
+import { sycraia } from "src/database";
+import { INFO } from "src/Components/Strings";
+import Common from "src/Components/Common";
 import Table from "./Table";
-import getItemPriceData from "../../../API/getItemPriceData";
+import getItemPriceData from "src/API/getItemPriceData";
 
 const Calc = () => {
   const [totalSilver, setTotalSilver] = useState(0);

@@ -1,5 +1,5 @@
 import React from "react";
-import { HOME } from "../../Components/Strings";
+import { HOME } from "src/Components/Strings";
 
 let tech_table = [];
 for (let i = 0; i < HOME.TECH_TABLE_CONTENT.length; i++) {

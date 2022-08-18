@@ -1,9 +1,9 @@
 import React, { createContext, useEffect, useState } from "react";
 import GrindInput from "../GrindInput";
-import Common from "../../../Components/Common";
+import Common from "src/Components/Common";
 import Debug from "./Debug";
 import { CurrencyDollarIcon } from "@heroicons/react/solid";
-import { sycraia } from "../../../database";
+import { sycraia } from "src/database";
 
 export const InputContext = createContext();
 
