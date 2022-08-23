@@ -4,8 +4,6 @@
 
 ## To-Do List
 
-- Fix code so it can be deployed
-
 GrindCalc:
 
 - Add user attributes (family fame, value pack on?, merchant ring, etc.)
