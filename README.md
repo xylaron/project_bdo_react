@@ -22,6 +22,10 @@ EnhanceSim (future failstack simulator):
 
 ## Useful Links
 
+Vercel production build page
+
+- https://project-scuffed.vercel.app/grindcalc
+
 React Official Documentation
 
 - https://reactjs.org/docs/hello-world.html
@@ -36,7 +40,7 @@ React Folder Structure Guide
 
 GitHub Repo Page
 
-- https://github.com/xylaron/project_bdo_react
+- https://github.com/xylaron/project_scuffed
 
 React API Fetching Tutorial
 
