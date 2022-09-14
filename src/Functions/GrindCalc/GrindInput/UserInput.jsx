@@ -19,6 +19,8 @@ const UserInput = ({ toggleModal }) => {
   }
 
   const [userInputData, setUserInputData] = useState(obj);
+
+  const [familyFame, setFamilyFame] = useState(0);
   const [hasValuePack, setHasValuePack] = useState(false);
 
   useEffect(() => {
@@ -38,7 +40,7 @@ const UserInput = ({ toggleModal }) => {
     const itemInputConv = itemInput.map((str) => {
       return Number(str);
     });
-    const fullUserInput = itemInputConv.push(hasValuePack);
+    const fullUserInput = itemInputConv.push(Number(familyFame), hasValuePack);
     console.log(fullUserInput);
     updateInputData(itemInputConv);
   };
@@ -85,7 +87,7 @@ const UserInput = ({ toggleModal }) => {
               name="family-fame"
               className="input w-20 rounded-lg border-zinc-700 bg-zinc-900 px-2 py-1 text-center text-lg font-bold"
               placeholder="0"
-              onChange={handleChange}
+              onChange={(event) => setFamilyFame(event.target.value)}
             />
           </div>
         </div>
