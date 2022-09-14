@@ -7,8 +7,7 @@
 GrindCalc:
 
 - Add user attributes (family fame, value pack on?, merchant ring, etc.)
-  - Headless UI for on/off switches
-  - Input box for family fame input
+  - Change user attributes to global settings (possibly useContext?)
 - Able to input hour and minutes grinded (instead of default 1hr)
 - Add Switch Between Sycraia and Orccamp
 - Add Edit/Delete function in Grind Calculator
