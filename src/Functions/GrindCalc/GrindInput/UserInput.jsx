@@ -19,12 +19,11 @@ const UserInput = ({ toggleModal }) => {
   }
 
   const [userInputData, setUserInputData] = useState(obj);
-  const [hasValuePack, setHasValuePack] = useState(0);
+  const [hasValuePack, setHasValuePack] = useState(false);
 
   useEffect(() => {
-    console.log("button status: ", hasValuePack)
-  }, [hasValuePack])
-  
+    console.log("button status: ", hasValuePack);
+  }, [hasValuePack]);
 
   const handleChange = (event) => {
     const name = event.target.name;
@@ -36,12 +35,11 @@ const UserInput = ({ toggleModal }) => {
     event.preventDefault();
     setIsDisabled(true);
     const itemInput = Object.values(userInputData).slice(0, sycraia.length + 1);
-    // const inputSettings = Object.values(userInputData).slice(sycraia.length);
     const itemInputConv = itemInput.map((str) => {
       return Number(str);
     });
-    // const fullUserInput = 
-    console.log(userInputData);
+    const fullUserInput = itemInputConv.push(hasValuePack);
+    console.log(fullUserInput);
     updateInputData(itemInputConv);
   };
 
@@ -99,13 +97,13 @@ const UserInput = ({ toggleModal }) => {
             <Switch
               checked={hasValuePack}
               onChange={setHasValuePack}
-              className={`${hasValuePack == 1 ? "bg-green-500" : "bg-zinc-400"}
+              className={`${hasValuePack ? "bg-green-500" : "bg-zinc-400"}
           relative inline-flex h-8 w-16 shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus-visible:ring-2  focus-visible:ring-white focus-visible:ring-opacity-75`}
             >
               <span className="sr-only">Use setting</span>
               <span
                 aria-hidden="true"
-                className={`${hasValuePack == 1 ? "translate-x-8" : "translate-x-0"}
+                className={`${hasValuePack ? "translate-x-8" : "translate-x-0"}
             pointer-events-none inline-block h-7 w-7 transform rounded-full bg-white shadow-lg ring-0 transition duration-200 ease-in-out`}
               />
             </Switch>
